@@ -1,0 +1,166 @@
+Sender: LSF System <lsfadmin@gpu03>
+Subject: Job 36810: <jackposetask> in cluster <cluster1> Done
+
+Job <jackposetask> was submitted from host <mgt02> by user <zeduoyu> in cluster <cluster1>.
+Job was executed on host(s) <gpu03>, in queue <gpuq>, as user <zeduoyu> in cluster <cluster1>.
+</gpfsdata/home/zeduoyu> was used as the home directory.
+</gpfsdata/home/zeduoyu/jackfiles/pose> was used as the working directory.
+Started at Results reported on 
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#BSUB -n 1
+#BSUB -R "select[ngpus>0] rusage [ngpus_shared=2]"
+#BSUB -e %j.err
+#BSUB -o %J.out
+#BSUB -q gpuq
+#BSUB -J jackposetask
+cd /gpfsdata/home/zeduoyu/jackfiles/pose/VideoPose3D/
+python run.py -k cpn_ft_h36m_dbb -arc 3,3,3,3,3 -c checkpoint --evaluate pretrained_h36m_cpn.bin
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   1921.18 sec.
+    Max Memory :                                 2277 MB
+    Average Memory :                             1825.90 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                28
+    Run time :                                   146 sec.
+    Turnaround time :                            144 sec.
+
+The output (if any) follows:
+
+Namespace(actions='*', architecture='3,3,3,3,3', batch_size=1024, bone_length_term=True, by_subject=False, causal=False, channels=1024, checkpoint='checkpoint', checkpoint_frequency=10, data_augmentation=True, dataset='h36m', dense=False, disable_optimizations=False, downsample=1, dropout=0.25, epochs=60, evaluate='pretrained_h36m_cpn.bin', export_training_curves=False, keypoints='cpn_ft_h36m_dbb', learning_rate=0.001, linear_projection=False, lr_decay=0.95, no_eval=False, no_proj=False, render=False, resume='', stride=1, subjects_test='S9,S11', subjects_train='S1,S5,S6,S7,S8', subjects_unlabeled='', subset=1, test_time_augmentation=True, viz_action=None, viz_bitrate=3000, viz_camera=0, viz_downsample=1, viz_export=None, viz_limit=-1, viz_no_ground_truth=False, viz_output=None, viz_size=5, viz_skip=0, viz_subject=None, viz_video=None, warmup=1)
+Loading dataset...
+Preparing data...
+Loading 2D detections...
+INFO: Receptive field: 243 frames
+INFO: Trainable parameter count: 16952371
+Loading checkpoint checkpoint/pretrained_h36m_cpn.bin
+This model was trained for 80 epochs
+INFO: Testing on 543344 frames
+Evaluating...
+----Purchases----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 44.27884044552604 mm
+Protocol #2 Error (P-MPJPE): 33.596641603131694 mm
+Protocol #3 Error (N-MPJPE): 42.51916398246168 mm
+Velocity Error (MPJVE): 3.0979490102806957 mm
+----------
+----Posing----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 44.62038779445539 mm
+Protocol #2 Error (P-MPJPE): 34.42265080776929 mm
+Protocol #3 Error (N-MPJPE): 43.346141771716546 mm
+Velocity Error (MPJVE): 2.6805061702903283 mm
+----------
+----Walking----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 32.78737246564769 mm
+Protocol #2 Error (P-MPJPE): 25.636828060991586 mm
+Protocol #3 Error (N-MPJPE): 31.41932590820553 mm
+Velocity Error (MPJVE): 3.119951390162986 mm
+----------
+----Sitting----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 57.29248208091017 mm
+Protocol #2 Error (P-MPJPE): 45.03277495027266 mm
+Protocol #3 Error (N-MPJPE): 55.24516908463199 mm
+Velocity Error (MPJVE): 2.074828604195779 mm
+----------
+----WalkDog----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 48.95927139714259 mm
+Protocol #2 Error (P-MPJPE): 37.7536157607809 mm
+Protocol #3 Error (N-MPJPE): 46.432763795326785 mm
+Velocity Error (MPJVE): 3.7212939152206226 mm
+----------
+----Greeting----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 45.6126783498535 mm
+Protocol #2 Error (P-MPJPE): 37.22414041027736 mm
+Protocol #3 Error (N-MPJPE): 44.40103341458054 mm
+Velocity Error (MPJVE): 3.432865559341122 mm
+----------
+----Waiting----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 43.985539130526504 mm
+Protocol #2 Error (P-MPJPE): 33.79774168283282 mm
+Protocol #3 Error (N-MPJPE): 42.48611424326859 mm
+Velocity Error (MPJVE): 2.418238287711425 mm
+----------
+----WalkTogether----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 33.87752887000528 mm
+Protocol #2 Error (P-MPJPE): 27.280319916710035 mm
+Protocol #3 Error (N-MPJPE): 32.16627260242634 mm
+Velocity Error (MPJVE): 2.7805875321248474 mm
+----------
+----Phoning----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 48.094190484118194 mm
+Protocol #2 Error (P-MPJPE): 36.39450528215383 mm
+Protocol #3 Error (N-MPJPE): 46.02659043060668 mm
+Velocity Error (MPJVE): 2.2728514560806676 mm
+----------
+----Discussion----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 46.67485060724528 mm
+Protocol #2 Error (P-MPJPE): 36.12383879586867 mm
+Protocol #3 Error (N-MPJPE): 45.07634790937696 mm
+Velocity Error (MPJVE): 3.105895273564088 mm
+----------
+----SittingDown----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 65.79780212322135 mm
+Protocol #2 Error (P-MPJPE): 52.53096994874719 mm
+Protocol #3 Error (N-MPJPE): 63.293542045205136 mm
+Velocity Error (MPJVE): 2.869893424683848 mm
+----------
+----Eating----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 43.300235002472505 mm
+Protocol #2 Error (P-MPJPE): 34.43398509217991 mm
+Protocol #3 Error (N-MPJPE): 42.127684753650115 mm
+Velocity Error (MPJVE): 2.2443480978328387 mm
+----------
+----Smoking----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 47.08722150591653 mm
+Protocol #2 Error (P-MPJPE): 37.374575638205826 mm
+Protocol #3 Error (N-MPJPE): 45.27725388202333 mm
+Velocity Error (MPJVE): 2.3061796807001036 mm
+----------
+----Directions----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 45.15618026333807 mm
+Protocol #2 Error (P-MPJPE): 34.119458353749934 mm
+Protocol #3 Error (N-MPJPE): 42.629380374797286 mm
+Velocity Error (MPJVE): 2.9753513932123776 mm
+----------
+----Photo----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 55.1247562515571 mm
+Protocol #2 Error (P-MPJPE): 42.20605459976509 mm
+Protocol #3 Error (N-MPJPE): 53.031416744562975 mm
+Velocity Error (MPJVE): 2.7116058342855065 mm
+----------
+Protocol #1   (MPJPE) action-wise average: 46.8 mm
+Protocol #2 (P-MPJPE) action-wise average: 36.5 mm
+Protocol #3 (N-MPJPE) action-wise average: 45.0 mm
+Velocity      (MPJVE) action-wise average: 2.79 mm
+
+
+PS:
+
+Read file <%j.err> for stderr output of this job.
+
+

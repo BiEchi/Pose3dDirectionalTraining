@@ -1,0 +1,255 @@
+Sender: LSF System <lsfadmin@gpu04>
+Subject: Job 36963: <jackposetask> in cluster <cluster1> Done
+
+Job <jackposetask> was submitted from host <gpu01> by user <zeduoyu> in cluster <cluster1>.
+Job was executed on host(s) <gpu04>, in queue <gpuq>, as user <zeduoyu> in cluster <cluster1>.
+</gpfsdata/home/zeduoyu> was used as the home directory.
+</gpfsdata/home/zeduoyu/jackfiles/pose> was used as the working directory.
+Started at Results reported on 
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#BSUB -n 1
+#BSUB -R "select[ngpus>0] rusage [ngpus_shared=1]"
+#BSUB -e %j.err
+#BSUB -o %J.out
+#BSUB -q gpuq
+#BSUB -J jackposetask
+cd /gpfsdata/home/zeduoyu/jackfiles/pose/VideoPose3D/
+python run.py -e 80 -k cpn_ft_h36m_dbb -arc 3,3,3,3,3
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   100276.19 sec.
+    Max Memory :                                 4906 MB
+    Average Memory :                             4821.12 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   2 MB
+    Max Processes :                              4
+    Max Threads :                                32
+    Run time :                                   81572 sec.
+    Turnaround time :                            81573 sec.
+
+The output (if any) follows:
+
+Namespace(actions='*', architecture='3,3,3,3,3', batch_size=1024, bone_length_term=True, by_subject=False, causal=False, channels=1024, checkpoint='checkpoint', checkpoint_frequency=10, data_augmentation=True, dataset='h36m', dense=False, disable_optimizations=False, downsample=1, dropout=0.25, epochs=80, evaluate='', export_training_curves=False, keypoints='cpn_ft_h36m_dbb', learning_rate=0.001, linear_projection=False, lr_decay=0.95, no_eval=False, no_proj=False, render=False, resume='', stride=1, subjects_test='S9,S11', subjects_train='S1,S5,S6,S7,S8', subjects_unlabeled='', subset=1, test_time_augmentation=True, viz_action=None, viz_bitrate=3000, viz_camera=0, viz_downsample=1, viz_export=None, viz_limit=-1, viz_no_ground_truth=False, viz_output=None, viz_size=5, viz_skip=0, viz_subject=None, viz_video=None, warmup=1)
+Loading dataset...
+Preparing data...
+Loading 2D detections...
+INFO: Receptive field: 243 frames
+INFO: Trainable parameter count: 16952371
+INFO: Testing on 543344 frames
+INFO: Training on 1559752 frames
+** Note: reported losses are averaged over all frames and test-time augmentation is not used here.
+** The final evaluation will be carried out after the last training epoch.
+[1] time 12.07 lr 0.001000 3d_train 121.652859 3d_eval 51.531408 3d_valid 64.437613
+[2] time 12.02 lr 0.000950 3d_train 52.234786 3d_eval 38.177455 3d_valid 56.859370
+[3] time 12.00 lr 0.000902 3d_train 42.357844 3d_eval 32.429661 3d_valid 54.733709
+[4] time 12.01 lr 0.000857 3d_train 38.246939 3d_eval 29.091389 3d_valid 51.330397
+[5] time 11.95 lr 0.000815 3d_train 35.635728 3d_eval 26.923516 3d_valid 51.716797
+[6] time 11.93 lr 0.000774 3d_train 33.782948 3d_eval 24.620621 3d_valid 50.955555
+[7] time 11.94 lr 0.000735 3d_train 32.454155 3d_eval 24.207655 3d_valid 50.233076
+[8] time 11.93 lr 0.000698 3d_train 31.309128 3d_eval 22.917172 3d_valid 49.685718
+[9] time 11.93 lr 0.000663 3d_train 30.428645 3d_eval 21.876522 3d_valid 49.369522
+[10] time 11.90 lr 0.000630 3d_train 29.722289 3d_eval 21.525306 3d_valid 50.200574
+Saving checkpoint to checkpoint/epoch_10.bin
+[11] time 11.89 lr 0.000599 3d_train 29.129457 3d_eval 21.146009 3d_valid 49.509753
+[12] time 11.86 lr 0.000569 3d_train 28.570542 3d_eval 20.275481 3d_valid 48.855558
+[13] time 11.86 lr 0.000540 3d_train 28.086471 3d_eval 19.725741 3d_valid 49.385860
+[14] time 11.85 lr 0.000513 3d_train 27.701952 3d_eval 19.950882 3d_valid 49.766455
+[15] time 19.16 lr 0.000488 3d_train 27.354981 3d_eval 19.251820 3d_valid 49.348513
+[16] time 22.51 lr 0.000463 3d_train 27.028968 3d_eval 18.765630 3d_valid 49.262093
+[17] time 22.47 lr 0.000440 3d_train 26.744552 3d_eval 18.478717 3d_valid 49.443454
+[18] time 22.36 lr 0.000418 3d_train 26.505932 3d_eval 18.079813 3d_valid 49.454509
+[19] time 22.32 lr 0.000397 3d_train 26.237695 3d_eval 18.122788 3d_valid 48.846246
+[20] time 22.31 lr 0.000377 3d_train 26.032273 3d_eval 17.870219 3d_valid 48.975428
+Saving checkpoint to checkpoint/epoch_20.bin
+[21] time 22.33 lr 0.000358 3d_train 25.838245 3d_eval 17.407794 3d_valid 49.187816
+[22] time 22.29 lr 0.000341 3d_train 25.675764 3d_eval 17.503645 3d_valid 48.811132
+[23] time 21.46 lr 0.000324 3d_train 25.473516 3d_eval 17.049576 3d_valid 48.853129
+[24] time 22.29 lr 0.000307 3d_train 25.348873 3d_eval 17.083218 3d_valid 48.644377
+[25] time 22.29 lr 0.000292 3d_train 25.201240 3d_eval 16.688418 3d_valid 48.708957
+[26] time 22.28 lr 0.000277 3d_train 25.071582 3d_eval 16.606437 3d_valid 49.046235
+[27] time 22.29 lr 0.000264 3d_train 24.961968 3d_eval 16.647429 3d_valid 48.732404
+[28] time 22.27 lr 0.000250 3d_train 24.821430 3d_eval 16.367150 3d_valid 48.669211
+[29] time 22.23 lr 0.000238 3d_train 24.714337 3d_eval 16.350915 3d_valid 49.000693
+[30] time 22.26 lr 0.000226 3d_train 24.630916 3d_eval 16.504768 3d_valid 48.979557
+Saving checkpoint to checkpoint/epoch_30.bin
+[31] time 22.23 lr 0.000215 3d_train 24.534979 3d_eval 16.151345 3d_valid 48.360340
+[32] time 21.36 lr 0.000204 3d_train 24.439019 3d_eval 16.031180 3d_valid 48.739988
+[33] time 22.19 lr 0.000194 3d_train 24.381446 3d_eval 16.121066 3d_valid 48.503726
+[34] time 22.20 lr 0.000184 3d_train 24.281584 3d_eval 15.686756 3d_valid 48.382503
+[35] time 22.15 lr 0.000175 3d_train 24.212361 3d_eval 15.826933 3d_valid 48.335586
+[36] time 22.18 lr 0.000166 3d_train 24.137161 3d_eval 15.628491 3d_valid 48.506479
+[37] time 22.18 lr 0.000158 3d_train 24.091670 3d_eval 15.785133 3d_valid 48.764896
+[38] time 22.15 lr 0.000150 3d_train 24.026274 3d_eval 15.592923 3d_valid 48.353470
+[39] time 22.32 lr 0.000142 3d_train 23.951910 3d_eval 15.646849 3d_valid 48.334603
+[40] time 21.62 lr 0.000135 3d_train 23.907978 3d_eval 15.427935 3d_valid 48.254948
+Saving checkpoint to checkpoint/epoch_40.bin
+[41] time 22.20 lr 0.000129 3d_train 23.856076 3d_eval 15.742217 3d_valid 48.582055
+[42] time 22.14 lr 0.000122 3d_train 23.808175 3d_eval 15.298281 3d_valid 48.401796
+[43] time 22.20 lr 0.000116 3d_train 23.748577 3d_eval 15.267726 3d_valid 48.320874
+[44] time 22.15 lr 0.000110 3d_train 23.704525 3d_eval 15.224367 3d_valid 48.404834
+[45] time 22.15 lr 0.000105 3d_train 23.668643 3d_eval 15.135278 3d_valid 48.383840
+[46] time 22.15 lr 0.000099 3d_train 23.633707 3d_eval 15.184100 3d_valid 48.177244
+[47] time 22.17 lr 0.000094 3d_train 23.595251 3d_eval 15.098286 3d_valid 48.353941
+[48] time 22.16 lr 0.000090 3d_train 23.558750 3d_eval 15.035961 3d_valid 48.252175
+[49] time 21.48 lr 0.000085 3d_train 23.535222 3d_eval 15.075014 3d_valid 48.146703
+[50] time 22.24 lr 0.000081 3d_train 23.503590 3d_eval 14.959509 3d_valid 48.294760
+Saving checkpoint to checkpoint/epoch_50.bin
+[51] time 22.17 lr 0.000077 3d_train 23.461524 3d_eval 15.050648 3d_valid 48.210437
+[52] time 22.14 lr 0.000073 3d_train 23.435660 3d_eval 14.844355 3d_valid 48.321251
+[53] time 22.26 lr 0.000069 3d_train 23.420998 3d_eval 14.897730 3d_valid 48.276082
+[54] time 22.25 lr 0.000066 3d_train 23.380237 3d_eval 14.805280 3d_valid 48.115881
+[55] time 16.09 lr 0.000063 3d_train 23.362852 3d_eval 14.910274 3d_valid 48.215017
+[56] time 11.62 lr 0.000060 3d_train 23.342054 3d_eval 14.789211 3d_valid 48.201242
+[57] time 11.59 lr 0.000057 3d_train 23.321823 3d_eval 14.881069 3d_valid 48.346345
+[58] time 11.61 lr 0.000054 3d_train 23.302703 3d_eval 14.753500 3d_valid 48.261655
+[59] time 11.62 lr 0.000051 3d_train 23.280779 3d_eval 14.715770 3d_valid 48.345275
+[60] time 11.60 lr 0.000048 3d_train 23.258404 3d_eval 14.666896 3d_valid 48.071383
+Saving checkpoint to checkpoint/epoch_60.bin
+[61] time 11.63 lr 0.000046 3d_train 23.240856 3d_eval 14.764415 3d_valid 48.130507
+[62] time 11.59 lr 0.000044 3d_train 23.220891 3d_eval 14.696713 3d_valid 48.008440
+[63] time 11.60 lr 0.000042 3d_train 23.210416 3d_eval 14.721697 3d_valid 48.214519
+[64] time 11.59 lr 0.000039 3d_train 23.206158 3d_eval 14.708927 3d_valid 48.095286
+[65] time 11.59 lr 0.000038 3d_train 23.174635 3d_eval 14.696683 3d_valid 48.393269
+[66] time 11.60 lr 0.000036 3d_train 23.183047 3d_eval 14.560725 3d_valid 48.263304
+[67] time 11.60 lr 0.000034 3d_train 23.167737 3d_eval 14.598603 3d_valid 48.198216
+[68] time 11.60 lr 0.000032 3d_train 23.148142 3d_eval 14.618061 3d_valid 48.271287
+[69] time 11.59 lr 0.000031 3d_train 23.135194 3d_eval 14.620141 3d_valid 48.231812
+[70] time 11.62 lr 0.000029 3d_train 23.119773 3d_eval 14.591413 3d_valid 48.105060
+Saving checkpoint to checkpoint/epoch_70.bin
+[71] time 11.59 lr 0.000028 3d_train 23.106952 3d_eval 14.558669 3d_valid 48.228579
+[72] time 11.60 lr 0.000026 3d_train 23.099858 3d_eval 14.609699 3d_valid 48.113829
+[73] time 11.59 lr 0.000025 3d_train 23.086747 3d_eval 14.529141 3d_valid 48.150504
+[74] time 11.60 lr 0.000024 3d_train 23.087185 3d_eval 14.558875 3d_valid 48.192715
+[75] time 11.60 lr 0.000022 3d_train 23.069394 3d_eval 14.561729 3d_valid 48.228556
+[76] time 11.59 lr 0.000021 3d_train 23.062476 3d_eval 14.469007 3d_valid 48.214622
+[77] time 11.60 lr 0.000020 3d_train 23.055490 3d_eval 14.538802 3d_valid 48.131816
+[78] time 11.60 lr 0.000019 3d_train 23.049618 3d_eval 14.502092 3d_valid 48.123399
+[79] time 11.59 lr 0.000018 3d_train 23.038823 3d_eval 14.524025 3d_valid 48.243003
+[80] time 11.59 lr 0.000017 3d_train 23.033679 3d_eval 14.489274 3d_valid 48.119515
+Saving checkpoint to checkpoint/epoch_80.bin
+Evaluating...
+----Purchases----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 43.87772257917527 mm
+Protocol #2 Error (P-MPJPE): 33.38782705217476 mm
+Protocol #3 Error (N-MPJPE): 42.089937105651245 mm
+Velocity Error (MPJVE): 3.1282763520298764 mm
+----------
+----Posing----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 44.665225675668225 mm
+Protocol #2 Error (P-MPJPE): 34.48035731963551 mm
+Protocol #3 Error (N-MPJPE): 43.47227939986283 mm
+Velocity Error (MPJVE): 2.7081392679579936 mm
+----------å
+----Walking----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 32.81957047227403 mm
+Protocol #2 Error (P-MPJPE): 25.562423113209057 mm
+Protocol #3 Error (N-MPJPE): 31.437441617484165 mm
+Velocity Error (MPJVE): 3.153953249424318 mm
+----------
+----Sitting----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 57.187489371819666 mm
+Protocol #2 Error (P-MPJPE): 45.14472459427467 mm
+Protocol #3 Error (N-MPJPE): 55.080195906543274 mm
+Velocity Error (MPJVE): 2.147304307677055 mm
+----------
+----WalkDog----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 48.96291493269188 mm
+Protocol #2 Error (P-MPJPE): 37.7973471626054 mm
+Protocol #3 Error (N-MPJPE): 46.6327122504754 mm
+Velocity Error (MPJVE): 3.7628055587899225 mm
+----------
+----Greeting----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 45.55758048697962 mm
+Protocol #2 Error (P-MPJPE): 37.20107510489712 mm
+Protocol #3 Error (N-MPJPE): 44.34876451970232 mm
+Velocity Error (MPJVE): 3.447498104875977 mm
+----------
+----Waiting----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 44.25549086934192 mm
+Protocol #2 Error (P-MPJPE): 33.824157967322094 mm
+Protocol #3 Error (N-MPJPE): 42.794836875930436 mm
+Velocity Error (MPJVE): 2.4567467041279016 mm
+----------
+----WalkTogether----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 33.77901967483898 mm
+Protocol #2 Error (P-MPJPE): 27.200538029532865 mm
+Protocol #3 Error (N-MPJPE): 32.09145056823332 mm
+Velocity Error (MPJVE): 2.7979868753385917 mm
+----------
+----Phoning----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 49.11236078852333 mm
+Protocol #2 Error (P-MPJPE): 36.78023896989471 mm
+Protocol #3 Error (N-MPJPE): 47.066020406171575 mm
+Velocity Error (MPJVE): 2.3062840367071202 mm
+----------
+----Discussion----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 46.78646252703913 mm
+Protocol #2 Error (P-MPJPE): 36.302737054579666 mm
+Protocol #3 Error (N-MPJPE): 45.263035372899296 mm
+Velocity Error (MPJVE): 3.124681473653251 mm
+----------
+----SittingDown----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 65.22047883101982 mm
+Protocol #2 Error (P-MPJPE): 51.77555887032823 mm
+Protocol #3 Error (N-MPJPE): 62.72358718247577 mm
+Velocity Error (MPJVE): 3.008004828384601 mm
+----------
+----Eating----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 42.532781845634766 mm
+Protocol #2 Error (P-MPJPE): 34.238799678182026 mm
+Protocol #3 Error (N-MPJPE): 41.24190255588635 mm
+Velocity Error (MPJVE): 2.283163690108681 mm
+----------
+----Smoking----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 47.12674112070174 mm
+Protocol #2 Error (P-MPJPE): 37.43202505963973 mm
+Protocol #3 Error (N-MPJPE): 45.36243554408295 mm
+Velocity Error (MPJVE): 2.34478250149131 mm
+----------
+----Directions----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 45.154755040118 mm
+Protocol #2 Error (P-MPJPE): 34.13208908406645 mm
+Protocol #3 Error (N-MPJPE): 42.604794062418065 mm
+Velocity Error (MPJVE): 2.9924888314914107 mm
+----------
+----Photo----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 56.2506139766308 mm
+Protocol #2 Error (P-MPJPE): 42.67192354341931 mm
+Protocol #3 Error (N-MPJPE): 54.252722176709206 mm
+Velocity Error (MPJVE): 2.751980018876633 mm
+----------
+Protocol #1   (MPJPE) action-wise average: 46.9 mm
+Protocol #2 (P-MPJPE) action-wise average: 36.5 mm
+Protocol #3 (N-MPJPE) action-wise average: 45.1 mm
+Velocity      (MPJVE) action-wise average: 2.83 mm
+
+
+PS:
+
+Read file <%j.err> for stderr output of this job.
+
+
