@@ -1,0 +1,38 @@
+项目进展
+
+1. 已经完成pose虚拟环境的基本dependence配置
+2. 已经完成inference的基本流程配置
+3. 已经完成dataset中Human3.6部分的下载和格式化
+4. 已经完成2Dpose的ground truth解析（合计886秒）
+5. 已经完成run.py操作，测试是否已经可以完成（我也不知道为什么，到这一步已经可以成功运行run.py了。目前用到的只有INFERENCE.md和DATASETS.md这两个文件）
+6. 正在进行重读文献和代码，理清完整思路（HEAD）
+7. 即将进行最终run.py操作
+
+
+问题
+
+1. inference直观的理解是什么意思？据我个人理解，这个的意思是“用训练出来的模型跑野生样本”，应该是证明自己的模型适用性比较广的一个方法。
+2. 为什么环境搭着搭着就能跑起来了？应该还是有部分环境没有安装上的。能否解释一下这些代码到底是怎样一个结构？
+- 在我看来，inference和作者的结果应该是不一样的，inference是可以随意选择的。因此inference的作用应该是生成我们将要拿这个模型在上面试验。
+- 作者用的检测集和inference不同，应该是自己选出来的。
+
+
+
+
+system output:
+(pose) [zeduoyu@mgt02 VideoPose3D]$ python run.py
+Namespace(actions='*', architecture='3,3,3', batch_size=1024, bone_length_term=True, by_subject=False, causal=False, channels=1024, checkpoint='checkpoint', checkpoint_frequency=10, data_augmentation=True, dataset='h36m', dense=False, disable_optimizations=False, downsample=1, dropout=0.25, epochs=60, evaluate='', export_training_curves=False, keypoints='cpn_ft_h36m_dbb', learning_rate=0.001, linear_projection=False, lr_decay=0.95, no_eval=False, no_proj=False, render=False, resume='', stride=1, subjects_test='S9,S11', subjects_train='S1,S5,S6,S7,S8', subjects_unlabeled='', subset=1, test_time_augmentation=True, viz_action=None, viz_bitrate=3000, viz_camera=0, viz_downsample=1, viz_export=None, viz_limit=-1, viz_no_ground_truth=False, viz_output=None, viz_size=5, viz_skip=0, viz_subject=None, viz_video=None, warmup=1)
+Loading dataset...
+Preparing data...
+Loading 2D detections...
+INFO: Receptive field: 27 frames
+INFO: Trainable parameter count: 8555571
+INFO: Testing on 543344 frames
+INFO: Training on 1559752 frames
+** Note: reported losses are averaged over all frames and test-time augmentation is not used here.
+** The final evaluation will be carried out after the last training epoch.
+
+
+
+
+

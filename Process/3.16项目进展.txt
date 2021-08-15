@@ -1,0 +1,13 @@
+目标
+
+readme里面如何evaluate model (PEND)
+把paper看明白 (RUN)
+把数据集如何load看明白 (RUN)
+把code里面的架构看明白 ()
+
+有关任务提交：
+用bsub（已完成，但有个问题：***bjobs里面显示的gpu在进入ssh模式后，显示并没有在运行***）
+不需要training，evaluate就可以了。（进行中，有个问题：如何仅仅进行training不进行evaluate？run.py默认给的是既进行training也进行evaluate）
+是否有按照bsub提交脚本作业？如果只是直接进服务器似乎是会断掉的。（已完成）
+是否有连gpu？用nvidia-smi看看有没有你的进程。（已完成）
+已经创建作业号36789（入口为pose虚拟环境）
