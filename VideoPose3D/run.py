@@ -48,6 +48,7 @@ elif args.dataset.startswith('custom'):
 else:
     raise KeyError('Invalid dataset')
 
+# dataset is the
 print('Preparing data...')
 for subject in dataset.subjects():
     for action in dataset[subject].keys():
