@@ -22,10 +22,7 @@ Under Protocol 1 (mean per-joint position error) and Protocol 2 (mean-per-joint 
 | Mask R-CNN | Mask R-CNN | 4 | 243 frames | 51.6 mm | 40.3 mm |
 | Ground truth | -- | 4 | 243 frames | 37.2 mm | 27.2 mm |
 
-**本文的要义就是利用自己训练出来的model把2D pose转成3D pose，其实就是一个维度转换model，从camera来的raw数据到2D pose的转化是通过借用别人的模型实现的。**
-
 ## Quick start
-
 To get started as quickly as possible, follow the instructions in this section. This should allow you train a model from scratch, test our pretrained models, and produce basic visualizations. For more detailed instructions, please refer to [`DOCUMENTATION.md`](DOCUMENTATION.md).
 
 ### Dependencies
@@ -38,14 +35,11 @@ Optional:
 - MATLAB, if you want to experiment with HumanEva-I (you need this to convert the dataset). 
 
 ### Dataset setup
-You can find the instructions for setting up the Human3.6M and HumanEva-I datasets in [`DATASETS.md`](DATASETS.md). **For this short guide, we focus on Human3.6M.** You are not required to setup HumanEva, unless you want to experiment with it.
+You can find the instructions for setting up the Human3.6M and HumanEva-I datasets in [`DATASETS.md`](DATASETS.md). For this short guide, we focus on Human3.6M. You are not required to setup HumanEva, unless you want to experiment with it.
 
 In order to proceed, you must also copy CPN detections (for Human3.6M) and/or Mask R-CNN detections (for HumanEva).
 
-### Evaluating our pretrained models (Inference using *Human3.6M*)
-
-使用Human3.6M数据集进行模型准确度评估。pretrained model表示可以使用作者已经训练好的模型，称为”预训练的“。
-
+### Evaluating our pretrained models
 The pretrained models can be downloaded from AWS. Put `pretrained_h36m_cpn.bin` (for Human3.6M) and/or `pretrained_humaneva15_detectron.bin` (for HumanEva) in the `checkpoint/` directory (create it if it does not exist).
 ```sh
 mkdir checkpoint

@@ -5,7 +5,6 @@
 # LICENSE file in the root directory of this source tree.
 #
 
-# import necessary dependencies
 import numpy as np
 
 from common.arguments import parse_args
@@ -36,7 +35,6 @@ except OSError as e:
         raise RuntimeError('Unable to create checkpoint directory:', args.checkpoint)
 
 print('Loading dataset...')
-# define the system dataset path with postfix .npz
 dataset_path = 'data/data_3d_' + args.dataset + '.npz'
 if args.dataset == 'h36m':
     from common.h36m_dataset import Human36mDataset
