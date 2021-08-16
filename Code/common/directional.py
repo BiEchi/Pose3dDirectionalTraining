@@ -6,7 +6,9 @@
 #
 
 def is_directional(action, choice):
-    print(choice)
-    if (action == choice) or (action == choice + " 1") or (action == choice + " 2") or (action == choice + " 3"):
+    if (choice == "all"):
         return True
-    return False
+    elif (action == choice) or (action == choice + " 1") or (action == choice + " 2") or (action == choice + " 3"):
+        return True
+    else:
+        return False

@@ -6,7 +6,7 @@
 #BSUB -q gpuq
 #BSUB -J jackposetask
 cd /gpfsdata/home/zeduoyu/jackfiles/Pose3dDirectionalTraining/VideoPose3D/
-python run.py -e 1 -k cpn_ft_h36m_dbb -arc 3,3,3
+python run.py -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho Sitting
 
 # if you want to prepare your dataset:
 # cd ./data

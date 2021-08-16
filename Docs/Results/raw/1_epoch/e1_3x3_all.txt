@@ -19,7 +19,7 @@ Protocol #1 Error (MPJPE): 57.595550573002164 mm
 Protocol #2 Error (P-MPJPE): 40.63314870477837 mm
 Protocol #3 Error (N-MPJPE): 54.42701388134066 mm
 Velocity Error (MPJVE): 3.4388472268148256 mm
-----------===
+----------
 ----Walking----
 Test time augmentation: True
 Protocol #1 Error (MPJPE): 51.8230131436231 mm

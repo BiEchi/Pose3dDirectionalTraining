@@ -5,7 +5,11 @@
 \usepackage{epsfig}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage[section]{placeins}
 \usepackage{amssymb}
+\usepackage{float}
+
+\graphicspath{ {./graphs/} }
 
 % Include other packages here, before hyperref.
 
@@ -25,7 +29,7 @@
 \begin{document}
 
 %%%%%%%%% TITLE
-\title{A Directional Training Method Based on \textit{VideoPose3D}}
+\title{An Action-based Training Method For \textit{VideoPose3D}}
 
 \author{Hao Bai\\
 ZJU-UIUC Institute\\
@@ -48,7 +52,7 @@ Haining, Jiaxing\\
 
 %%%%%%%%% ABSTRACT
 \begin{abstract}
-   In this essay we perform a directional training method based on \textit{VideoPose3D}. 
+   In this essay we perform a homogenized action-based training method based on \textit{VideoPose3D}.
    The original paper utilizes a semi-supervised approach on different kinds of subjects
    and different actions in the network, and we select each action as the only input of
    the training dataset, and estimate the error in multiple protocols. Our approach is utilized
@@ -58,66 +62,162 @@ Haining, Jiaxing\\
 %%%%%%%%% BODY TEXT
 \section{Introduction}
 
-Our work focuses on the improvement of 3D human pose estimation in video.
-\textit{VideoPose3D} is the current state-of-the-art approach which utilizes a fully convolutional model based on dilated temporal convolutions over 2D keypoints. \cite{pavllo20193d,pavlakos2017coarse}. 
+Vision-based human motion analysis attempts to understand the movements of the human body 
+using computer vision and machine learning techniques. Our work focuses on the improvement 
+of 3D human pose estimation in video. The original \textit{VideoPose3D} model carries out the 
+result shown in Figure 1, and our model changes the idea with Figure 2.
 
+\includegraphics[scale=0.35]{model.png}}
 
 %-------------------------------------------------------------------------
-\subsection{Language}
+\subsection{Action-based Learning}
 
-All manuscripts must be in English.
+Compared to the original model we utilized a different data-processing approach. The original approach
+mentioned in \textit{VideoPose3D} uses all actions in training data, and the estimating effect was good
+overall. We utilize the method that we only take one type of action for training, and the total amount 
+for training should be the same. Mathematically, take the action \textit{Sitting} for example, it can 
+be expressed as
+
+\begin{equation}
+	\sum_{i\in actions}{f(i)} = f(Sitting)\cdot t
+\end{equation}
+where $f$ stands for the frames of subject, and $t$ means the number of epochs of our action-based 
+training.
+
+In this approach, we utilize only one time of action, which means we save more data; and we also produce
+the results in the same time, the evidence can be illustrated by formula (1). After testing, we conclude 
+that our work outperforms the original work by 11\%.
+
+The principle of our work is shown below.
+
+\includegraphics[scale=0.35]{model_new}
 
 %------------------------------------------------------------------------
 \section{Related Work}
 
-All text must be in a two-column format. The total allowable width of the
-text area is $6\frac78$ inches (17.5 cm) wide by $8\frac78$ inches (22.54
-cm) high. Columns are to be $3\frac14$ inches (8.25 cm) wide, with a
-$\frac{5}{16}$ inch (0.8 cm) space between them. The main title (on the
-first page) should begin 1.0 inch (2.54 cm) from the top edge of the
-page. The second and following pages should begin 1.0 inch (2.54 cm) from
-the top edge. On all pages, the bottom margin should be 1-1/8 inches (2.86
-cm) from the bottom edge of the page for $8.5 \times 11$-inch paper; for A4
-paper, approximately 1-5/8 inches (4.13 cm) from the bottom edge of the
-page.
+Our work is based on the previous work \textit{VideoPose3D} with an inspiration for its
+semi-supervised approach. Earlier work has shown the effect of semi-supervised learning
+as a great way for improving training performance \cite{zhu2009introduction}. 
 
 %-------------------------------------------------------------------------
-\subsection{Margins and page numbering}
+\subsection{VideoPose3D}
 
-All printed material, including text, illustrations, and charts, must be kept
-within a print area 6-7/8 inches (17.5 cm) wide by 8-7/8 inches (22.54 cm)
-high.
-Page numbers should be in footer with page numbers, centered and .75
-inches from the bottom of the page and make it start at the correct page
-number rather than the 4321 in the example.  To do this fine the line (around
-line 23)
-\begin{verbatim}
-%\ifcvprfinal\pagestyle{empty}\fi
-\setcounter{page}{4321}
-\end{verbatim}
-where the number 4321 is your assigned starting page.
 
-Make sure the first page is numbered by commenting out the first page being
-empty on line 46
-\begin{verbatim}
-%\thispagestyle{empty}
-\end{verbatim}
+\textit{VideoPose3D} is the current state-of-the-art approach which utilizes a fully 
+convolutional model based on dilated temporal convolutions over 2D keypoints. 
+\cite{pavlakos2017coarse,pavllo20193d}. In early researches the main solution
+was to use recurrent neural networks (RNN) \cite{lee2018propagating}, but the research
+group of \textit{VideoPose3D} utilized the convolutional neuron network (CNN) to gain
+an efficient result on the dataset \textit{Human3.6M}, with the inspiration that
+many authors had mentioned CNN in temporal models. Some researches has also shown the 
+idea of using a spacial-temporal model being useful \cite{7298734}, but that's not utilized in our 
+research.
+
+\includegraphics[scale=0.25]{original.png}
+
+
+
+%-------------------------------------------------------------------------
+\subsection{Action-based Learning}
+
+The idea of homogenized learning was proposed firstly by Action Estimations \cite{yao2012coupled,wang2013action}.
+
+
+
+%-------------------------------------------------------------------------
+\subsection{Homography Estimation}
+
+The idea of using homonegeious actions in a dataset was also inspired from Homography Estimation
+in some deep images \cite{detone2016deep}. 
+
 
 
 %------------------------------------------------------------------------
 \section{Experimental Setup}
 
-You must include your signed IEEE copyright release form when you submit
-your finished paper. We MUST have this form before your paper can be
-published in the proceedings.
+For the code of this project, please refer to the url below.
 
-Please direct any questions to the production editor in charge of these 
-proceedings at the IEEE Computer Society Press: 
-\url{https://www.computer.org/about/contact}. 
+ \url{https://github.com/BiEchi/Pose3dDirectionalTraining}. 
+ 
+The detailed experimental setup can also be explored in \textit{README.md} in the github repo. To reproduce
+the results, you need to test for 15 times for each type of action, and it's preferable to test for multiple
+times. It's more convenient to use \textit{bash} scripts to save time.
 
+%------------------------------------------------------------------------
 
 \section{Results}
 
+Shown below are the results of the experiment. Expect a minor error when testing on your own. Note that all
+unit are millimeter.
+
+\subsection{Small Number of Epochs}
+
+\begin{table}[H]
+\caption{MPJPE, 3*3, unit-epoch}
+
+\begin{tabular}{ccc}
+
+\hline
+Action & Original, MPJPE & Action-based, MPJPE\\
+\hline
+
+Eating&  56.34 & \textbf{52.07}\\
+Sitting& 70.49 & 70.86\\
+
+\hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\caption{Velocity Error, 3*3, unit-epoch}
+
+
+\begin{tabular}{ccc}
+\hline
+Action & Original, Velo-M  & Action-based, Velo-M\\
+\hline
+
+Eating&  3.14 & \textbf{3.01}\\
+Sitting& 3.14 & \textbf{2.86}\\
+
+\hline
+\end{tabular}
+\end{table}
+
+
+\subsection{Large Number of Epochs}
+
+For a large number of data, we observe that because of the characteristics of the model that \textit{VideoPose3D}
+utilizes, the epoch refuses to increase after epoch 60 (i.e. epoch 4 of the original training method). 
+
+
+\begin{table}[H]
+\caption{Property Cluster, 3*3, 80-epoch}
+\centering
+\begin{tabular}{ccc}
+\hline
+Type & Original  & Eating-based\\
+\hline
+
+Time Consumed&  81173 sec & 56921 sec\\
+MPJPE-Eating&  43.30 mm & 49.27 mm\\
+Velo-M-Eating&  2.24 mm & 2.56 mm  \\
+
+\hline
+\end{tabular}
+\end{table}
+
+\includegraphics[scale=0.55]{training_epochs.png}
+
+
+
+\section{Conclusion}
+According to the results shown above, we conclude that the action-based model has a better performance on small epochs because 
+they learn faster than the original one, though it has a worse performance on the top performance.
+
+
+\newpage
 
 {\small
 \bibliographystyle{ieee_fullname}
@@ -125,3 +225,4 @@ proceedings at the IEEE Computer Society Press:
 }
 
 \end{document}
+

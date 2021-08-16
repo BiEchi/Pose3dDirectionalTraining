@@ -1,34 +1,40 @@
+Namespace(actions='*', architecture='3,3,3', batch_size=1024, bone_length_term=True, by_subject=False, causal=False, channels=1024, checkpoint='checkpoint', checkpoint_frequency=10, choice='Sitting', data_augmentation=True, dataset='h36m', dense=False, disable_optimizations=False, downsample=1, dropout=0.25, epochs=15, evaluate='', export_training_curves=False, keypoints='cpn_ft_h36m_dbb', learning_rate=0.001, linear_projection=False, lr_decay=0.95, no_eval=False, no_proj=False, render=False, resume='', stride=1, subjects_test='S9,S11', subjects_train='S1,S5,S6,S7,S8', subjects_unlabeled='', subset=1, test_time_augmentation=True, viz_action=None, viz_bitrate=3000, viz_camera=0, viz_downsample=1, viz_export=None, viz_limit=-1, viz_no_ground_truth=False, viz_output=None, viz_size=5, viz_skip=0, viz_subject=None, viz_video=None, warmup=1)
+Loading dataset...
+Preparing data...
+Loading 2D detections...
 INFO: Receptive field: 27 frames
 INFO: Trainable parameter count: 8555571
-INFO: Testing on 39308 frames
-INFO: Training on 109424 frames
+/gpfsdata/home/zeduoyu/anaconda3/lib/python3.8/site-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 10010). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at  /opt/conda/conda-bld/pytorch_1623448234945/work/c10/cuda/CUDAFunctions.cpp:115.)
+  return torch._C._cuda_getDeviceCount() > 0
+INFO: Testing on 40276 frames
+INFO: Training on 116472 frames
 ** Note: reported losses are averaged over all frames and test-time augmentation is not used here.
 ** The final evaluation will be carried out after the last training epoch.
-[1] time 0.21 lr 0.001000 3d_train 380.232921 3d_eval 98.113456 3d_valid 113.661651
-[2] time 0.21 lr 0.000950 3d_train 126.929244 3d_eval 99.398065 3d_valid 134.087386
-[3] time 0.21 lr 0.000902 3d_train 84.819897 3d_eval 67.010956 3d_valid 87.522406
-[4] time 0.21 lr 0.000857 3d_train 68.013705 3d_eval 49.935788 3d_valid 74.403664
-[5] time 0.21 lr 0.000815 3d_train 57.627846 3d_eval 59.043350 3d_valid 80.693767
-[6] time 0.21 lr 0.000774 3d_train 52.931197 3d_eval 46.827096 3d_valid 70.452167
-[7] time 0.21 lr 0.000735 3d_train 49.751916 3d_eval 52.390262 3d_valid 77.853463
-[8] time 0.21 lr 0.000698 3d_train 53.044997 3d_eval 39.222176 3d_valid 61.421139
-[9] time 0.21 lr 0.000663 3d_train 45.737183 3d_eval 36.145052 3d_valid 61.222008
-[10] time 0.21 lr 0.000630 3d_train 41.579130 3d_eval 29.625821 3d_valid 57.021911
+[1] time 3.21 lr 0.001000 3d_train 383.349567 3d_eval 115.692051 3d_valid 141.659647
+[2] time 3.15 lr 0.000950 3d_train 117.881922 3d_eval 80.590952 3d_valid 109.484161
+[3] time 3.16 lr 0.000902 3d_train 82.473096 3d_eval 60.103891 3d_valid 92.942052
+[4] time 3.14 lr 0.000857 3d_train 70.675139 3d_eval 54.567753 3d_valid 89.054247
+[5] time 3.16 lr 0.000815 3d_train 60.288810 3d_eval 42.621501 3d_valid 83.891528
+[6] time 3.10 lr 0.000774 3d_train 55.602537 3d_eval 48.083004 3d_valid 83.863791
+[7] time 3.12 lr 0.000735 3d_train 52.117059 3d_eval 37.742488 3d_valid 78.100212
+[8] time 3.15 lr 0.000698 3d_train 47.636593 3d_eval 45.268443 3d_valid 88.133688
+[9] time 3.14 lr 0.000663 3d_train 45.524932 3d_eval 48.074518 3d_valid 87.160077
+[10] time 3.15 lr 0.000630 3d_train 44.427636 3d_eval 45.164565 3d_valid 81.476814
 Saving checkpoint to checkpoint/epoch_10.bin
-[11] time 0.21 lr 0.000599 3d_train 39.427363 3d_eval 33.074628 3d_valid 57.337910
-[12] time 0.21 lr 0.000569 3d_train 38.145693 3d_eval 32.638980 3d_valid 60.643692
-[13] time 0.21 lr 0.000540 3d_train 36.455423 3d_eval 34.804014 3d_valid 60.366992
-[14] time 0.21 lr 0.000513 3d_train 34.453809 3d_eval 30.650520 3d_valid 57.113334
-[15] time 0.21 lr 0.000488 3d_train 33.956522 3d_eval 27.016070 3d_valid 53.935812
+[11] time 3.12 lr 0.000599 3d_train 42.121329 3d_eval 32.707614 3d_valid 74.116199
+[12] time 3.11 lr 0.000569 3d_train 40.642580 3d_eval 35.715488 3d_valid 77.745043
+[13] time 3.11 lr 0.000540 3d_train 39.595226 3d_eval 28.786812 3d_valid 73.790645
+[14] time 3.11 lr 0.000513 3d_train 38.299995 3d_eval 36.256765 3d_valid 80.764182
+[15] time 3.10 lr 0.000488 3d_train 37.851957 3d_eval 31.307660 3d_valid 72.911067
 Evaluating...
-----Eating----
+----Sitting----
 Test time augmentation: True
-Protocol #1 Error (MPJPE): 52.07212287701391 mm
-Protocol #2 Error (P-MPJPE): 41.093257570778945 mm
-Protocol #3 Error (N-MPJPE): 49.27291962925325 mm
-Velocity Error (MPJVE): 3.006518992705642 mm
+Protocol #1 Error (MPJPE): 70.85743859254526 mm
+Protocol #2 Error (P-MPJPE): 54.17070327030119 mm
+Protocol #3 Error (N-MPJPE): 65.39069464651644 mm
+Velocity Error (MPJVE): 2.8567026564933258 mm
 ----------
-Protocol #1   (MPJPE) action-wise average: 52.1 mm
-Protocol #2 (P-MPJPE) action-wise average: 41.1 mm
-Protocol #3 (N-MPJPE) action-wise average: 49.3 mm
-Velocity      (MPJVE) action-wise average: 3.01 mm
+Protocol #1   (MPJPE) action-wise average: 70.9 mm
+Protocol #2 (P-MPJPE) action-wise average: 54.2 mm
+Protocol #3 (N-MPJPE) action-wise average: 65.4 mm
+Velocity      (MPJVE) action-wise average: 2.86 mm
