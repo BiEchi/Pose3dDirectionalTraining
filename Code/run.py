@@ -50,7 +50,7 @@ else:
     raise KeyError('Invalid dataset')
 
 # dataset is prepared
-print('Preparing data...')
+print('Preparing data...') 
 for subject in dataset.subjects():
     for action in dataset[subject].keys():
         if is_directional(action, args.choice):

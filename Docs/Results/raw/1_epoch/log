@@ -1,0 +1,2333 @@
+<< output from stdout >>
+Namespace(actions='*', architecture='3,3,3', batch_size=1024, bone_length_term=True, by_subject=False, causal=False, channels=1024, checkpoint='checkpoint', checkpoint_frequency=10, choice='Directions', data_augmentation=True, dataset='h36m', dense=False, disable_optimizations=False, downsample=1, dropout=0.25, epochs=15, evaluate='', export_training_curves=False, keypoints='cpn_ft_h36m_dbb', learning_rate=0.001, linear_projection=False, lr_decay=0.95, no_eval=False, no_proj=False, render=False, resume='', stride=1, subjects_test='S9,S11', subjects_train='S1,S5,S6,S7,S8', subjects_unlabeled='', subset=1, test_time_augmentation=True, viz_action=None, viz_bitrate=3000, viz_camera=0, viz_downsample=1, viz_export=None, viz_limit=-1, viz_no_ground_truth=False, viz_output=None, viz_size=5, viz_skip=0, viz_subject=None, viz_video=None, warmup=1)
+Loading dataset...
+Preparing data...
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Loading 2D detections...
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+INFO: Receptive field: 27 frames
+INFO: Trainable parameter count: 8555571
+INFO: Testing on 26428 frames
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+INFO: Training on 100936 frames
+** Note: reported losses are averaged over all frames and test-time augmentation is not used here.
+** The final evaluation will be carried out after the last training epoch.
+[1] time 3.18 lr 0.001000 3d_train 394.663533 3d_eval 119.693417 3d_valid 123.774376
+[2] time 2.69 lr 0.000950 3d_train 146.869369 3d_eval 99.090886 3d_valid 108.568725
+[3] time 3.21 lr 0.000902 3d_train 87.598408 3d_eval 91.590022 3d_valid 103.183515
+[4] time 3.14 lr 0.000857 3d_train 70.586056 3d_eval 334.301707 3d_valid 303.372061
+[5] time 2.70 lr 0.000815 3d_train 81.153226 3d_eval 69.142085 3d_valid 81.348828
+[6] time 2.94 lr 0.000774 3d_train 61.532203 3d_eval 74.752295 3d_valid 90.178297
+[7] time 3.44 lr 0.000735 3d_train 53.712213 3d_eval 60.435718 3d_valid 80.599348
+[8] time 2.99 lr 0.000698 3d_train 49.642817 3d_eval 48.257545 3d_valid 67.010755
+[9] time 2.79 lr 0.000663 3d_train 46.649087 3d_eval 47.219897 3d_valid 69.248154
+[10] time 3.25 lr 0.000630 3d_train 44.937650 3d_eval 49.342755 3d_valid 77.785412
+Saving checkpoint to checkpoint/epoch_10.bin
+[11] time 3.26 lr 0.000599 3d_train 41.814528 3d_eval 43.108249 3d_valid 67.460107
+[12] time 2.72 lr 0.000569 3d_train 40.819914 3d_eval 54.314336 3d_valid 77.473871
+[13] time 3.20 lr 0.000540 3d_train 39.323985 3d_eval 54.368101 3d_valid 80.405625
+[14] time 3.21 lr 0.000513 3d_train 38.381210 3d_eval 38.448738 3d_valid 61.724672
+[15] time 2.84 lr 0.000488 3d_train 36.425143 3d_eval 46.263407 3d_valid 73.450035
+Evaluating...
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+Directions
+----Directions----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 70.49975489831888 mm
+Protocol #2 Error (P-MPJPE): 43.7519146072823 mm
+Protocol #3 Error (N-MPJPE): 53.752937077724916 mm
+Velocity Error (MPJVE): 3.7819720935325973 mm
+----------
+Protocol #1   (MPJPE) action-wise average: 70.5 mm
+Protocol #2 (P-MPJPE) action-wise average: 43.8 mm
+Protocol #3 (N-MPJPE) action-wise average: 53.8 mm
+Velocity      (MPJVE) action-wise average: 3.78 mm
+Namespace(actions='*', architecture='3,3,3', batch_size=1024, bone_length_term=True, by_subject=False, causal=False, channels=1024, checkpoint='checkpoint', checkpoint_frequency=10, choice='Discussion', data_augmentation=True, dataset='h36m', dense=False, disable_optimizations=False, downsample=1, dropout=0.25, epochs=15, evaluate='', export_training_curves=False, keypoints='cpn_ft_h36m_dbb', learning_rate=0.001, linear_projection=False, lr_decay=0.95, no_eval=False, no_proj=False, render=False, resume='', stride=1, subjects_test='S9,S11', subjects_train='S1,S5,S6,S7,S8', subjects_unlabeled='', subset=1, test_time_augmentation=True, viz_action=None, viz_bitrate=3000, viz_camera=0, viz_downsample=1, viz_export=None, viz_limit=-1, viz_no_ground_truth=False, viz_output=None, viz_size=5, viz_skip=0, viz_subject=None, viz_video=None, warmup=1)
+Loading dataset...
+Preparing data...
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Loading 2D detections...
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+INFO: Receptive field: 27 frames
+INFO: Trainable parameter count: 8555571
+INFO: Testing on 64244 frames
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+INFO: Training on 158788 frames
+** Note: reported losses are averaged over all frames and test-time augmentation is not used here.
+** The final evaluation will be carried out after the last training epoch.
+[1] time 4.87 lr 0.001000 3d_train 320.351787 3d_eval 102.860985 3d_valid 165.048156
+[2] time 4.75 lr 0.000950 3d_train 94.374179 3d_eval 115.449135 3d_valid 182.116594
+[3] time 4.71 lr 0.000902 3d_train 69.855187 3d_eval 95.261407 3d_valid 148.076396
+[4] time 4.73 lr 0.000857 3d_train 61.527260 3d_eval 312.590577 3d_valid 402.004827
+[5] time 4.91 lr 0.000815 3d_train 62.240064 3d_eval 158.417658 3d_valid 239.041123
+[6] time 4.86 lr 0.000774 3d_train 59.688172 3d_eval 72.437735 3d_valid 119.341750
+[7] time 4.51 lr 0.000735 3d_train 50.057823 3d_eval 58.200240 3d_valid 106.785534
+[8] time 5.13 lr 0.000698 3d_train 47.128099 3d_eval 73.219042 3d_valid 107.679301
+[9] time 4.55 lr 0.000663 3d_train 48.731240 3d_eval 86.759864 3d_valid 125.974459
+[10] time 5.38 lr 0.000630 3d_train 45.763510 3d_eval 49.752943 3d_valid 84.492445
+Saving checkpoint to checkpoint/epoch_10.bin
+[11] time 4.29 lr 0.000599 3d_train 41.891461 3d_eval 51.065873 3d_valid 87.837936
+[12] time 5.17 lr 0.000569 3d_train 39.834570 3d_eval 62.363248 3d_valid 100.450137
+[13] time 4.41 lr 0.000540 3d_train 40.274608 3d_eval 44.031064 3d_valid 82.529457
+[14] time 5.08 lr 0.000513 3d_train 37.565661 3d_eval 38.989507 3d_valid 73.837756
+[15] time 4.77 lr 0.000488 3d_train 36.351635 3d_eval 37.375308 3d_valid 74.774299
+Evaluating...
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+Discussion
+----Discussion----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 71.88437355234713 mm
+Protocol #2 Error (P-MPJPE): 51.08482447329853 mm
+Protocol #3 Error (N-MPJPE): 65.4215283730618 mm
+Velocity Error (MPJVE): 4.284511670669654 mm
+----------
+Protocol #1   (MPJPE) action-wise average: 71.9 mm
+Protocol #2 (P-MPJPE) action-wise average: 51.1 mm
+Protocol #3 (N-MPJPE) action-wise average: 65.4 mm
+Velocity      (MPJVE) action-wise average: 4.28 mm
+Namespace(actions='*', architecture='3,3,3', batch_size=1024, bone_length_term=True, by_subject=False, causal=False, channels=1024, checkpoint='checkpoint', checkpoint_frequency=10, choice='Eating', data_augmentation=True, dataset='h36m', dense=False, disable_optimizations=False, downsample=1, dropout=0.25, epochs=15, evaluate='', export_training_curves=False, keypoints='cpn_ft_h36m_dbb', learning_rate=0.001, linear_projection=False, lr_decay=0.95, no_eval=False, no_proj=False, render=False, resume='', stride=1, subjects_test='S9,S11', subjects_train='S1,S5,S6,S7,S8', subjects_unlabeled='', subset=1, test_time_augmentation=True, viz_action=None, viz_bitrate=3000, viz_camera=0, viz_downsample=1, viz_export=None, viz_limit=-1, viz_no_ground_truth=False, viz_output=None, viz_size=5, viz_skip=0, viz_subject=None, viz_video=None, warmup=1)
+Loading dataset...
+Preparing data...
+Loading 2D detections...
+INFO: Receptive field: 27 frames
+INFO: Trainable parameter count: 8555571
+INFO: Testing on 39308 frames
+INFO: Training on 109424 frames
+** Note: reported losses are averaged over all frames and test-time augmentation is not used here.
+** The final evaluation will be carried out after the last training epoch.
+[1] time 3.48 lr 0.001000 3d_train 370.761535 3d_eval 93.419938 3d_valid 110.087025
+[2] time 3.50 lr 0.000950 3d_train 123.170914 3d_eval 72.174677 3d_valid 85.055616
+[3] time 3.06 lr 0.000902 3d_train 82.243325 3d_eval 72.827319 3d_valid 108.399044
+[4] time 3.32 lr 0.000857 3d_train 69.383051 3d_eval 53.200285 3d_valid 75.414541
+[5] time 3.42 lr 0.000815 3d_train 59.369809 3d_eval 55.244875 3d_valid 77.587418
+[6] time 2.93 lr 0.000774 3d_train 52.378336 3d_eval 41.719326 3d_valid 66.203850
+[7] time 3.76 lr 0.000735 3d_train 49.523786 3d_eval 37.455698 3d_valid 59.427473
+[8] time 3.56 lr 0.000698 3d_train 48.696290 3d_eval 41.485144 3d_valid 60.639925
+[9] time 3.02 lr 0.000663 3d_train 44.947950 3d_eval 35.692888 3d_valid 62.434266
+[10] time 3.21 lr 0.000630 3d_train 41.072565 3d_eval 34.876449 3d_valid 64.046648
+Saving checkpoint to checkpoint/epoch_10.bin
+[11] time 3.60 lr 0.000599 3d_train 42.574985 3d_eval 69.671461 3d_valid 90.609999
+[12] time 3.03 lr 0.000569 3d_train 41.951585 3d_eval 37.094490 3d_valid 63.379150
+[13] time 3.05 lr 0.000540 3d_train 38.459238 3d_eval 39.234589 3d_valid 66.033607
+[14] time 3.87 lr 0.000513 3d_train 36.504363 3d_eval 33.640542 3d_valid 61.861516
+[15] time 3.04 lr 0.000488 3d_train 35.495037 3d_eval 31.120709 3d_valid 60.423978
+Evaluating...
+----Eating----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 57.47602425418606 mm
+Protocol #2 Error (P-MPJPE): 41.950449581203316 mm
+Protocol #3 Error (N-MPJPE): 51.072493057166916 mm
+Velocity Error (MPJVE): 3.005118628291801 mm
+----------
+Protocol #1   (MPJPE) action-wise average: 57.5 mm
+Protocol #2 (P-MPJPE) action-wise average: 42.0 mm
+Protocol #3 (N-MPJPE) action-wise average: 51.1 mm
+Velocity      (MPJVE) action-wise average: 3.01 mm
+Namespace(actions='*', architecture='3,3,3', batch_size=1024, bone_length_term=True, by_subject=False, causal=False, channels=1024, checkpoint='checkpoint', checkpoint_frequency=10, choice='Greeting', data_augmentation=True, dataset='h36m', dense=False, disable_optimizations=False, downsample=1, dropout=0.25, epochs=15, evaluate='', export_training_curves=False, keypoints='cpn_ft_h36m_dbb', learning_rate=0.001, linear_projection=False, lr_decay=0.95, no_eval=False, no_proj=False, render=False, resume='', stride=1, subjects_test='S9,S11', subjects_train='S1,S5,S6,S7,S8', subjects_unlabeled='', subset=1, test_time_augmentation=True, viz_action=None, viz_bitrate=3000, viz_camera=0, viz_downsample=1, viz_export=None, viz_limit=-1, viz_no_ground_truth=False, viz_output=None, viz_size=5, viz_skip=0, viz_subject=None, viz_video=None, warmup=1)
+Loading dataset...
+Preparing data...
+Loading 2D detections...
+INFO: Receptive field: 27 frames
+INFO: Trainable parameter count: 8555571
+INFO: Testing on 30644 frames
+INFO: Training on 72436 frames
+** Note: reported losses are averaged over all frames and test-time augmentation is not used here.
+** The final evaluation will be carried out after the last training epoch.
+[1] time 2.01 lr 0.001000 3d_train 470.081718 3d_eval 130.691837 3d_valid 134.336127
+[2] time 2.48 lr 0.000950 3d_train 216.873528 3d_eval 102.529209 3d_valid 108.391317
+[3] time 2.42 lr 0.000902 3d_train 119.753475 3d_eval 91.576613 3d_valid 89.744730
+[4] time 2.03 lr 0.000857 3d_train 87.462092 3d_eval 72.565033 3d_valid 82.926175
+[5] time 2.15 lr 0.000815 3d_train 81.831338 3d_eval 67.526134 3d_valid 79.839001
+[6] time 1.96 lr 0.000774 3d_train 70.880701 3d_eval 58.091499 3d_valid 70.904122
+[7] time 2.49 lr 0.000735 3d_train 60.306434 3d_eval 54.125738 3d_valid 70.718353
+[8] time 2.49 lr 0.000698 3d_train 56.348152 3d_eval 53.269142 3d_valid 72.892223
+[9] time 2.14 lr 0.000663 3d_train 53.865845 3d_eval 54.327858 3d_valid 75.605913
+[10] time 2.17 lr 0.000630 3d_train 48.724370 3d_eval 44.657008 3d_valid 67.864357
+Saving checkpoint to checkpoint/epoch_10.bin
+[11] time 2.52 lr 0.000599 3d_train 47.089125 3d_eval 51.334880 3d_valid 75.423788
+[12] time 2.31 lr 0.000569 3d_train 47.458195 3d_eval 46.975523 3d_valid 70.881239
+[13] time 2.12 lr 0.000540 3d_train 46.899045 3d_eval 47.306528 3d_valid 70.564545
+[14] time 2.05 lr 0.000513 3d_train 43.922102 3d_eval 45.850340 3d_valid 70.070509
+[15] time 2.13 lr 0.000488 3d_train 43.110311 3d_eval 37.672420 3d_valid 62.317043
+Evaluating...
+----Greeting----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 61.381262768657585 mm
+Protocol #2 Error (P-MPJPE): 44.36719588361094 mm
+Protocol #3 Error (N-MPJPE): 53.13098387173446 mm
+Velocity Error (MPJVE): 4.272825323596437 mm
+----------
+Protocol #1   (MPJPE) action-wise average: 61.4 mm
+Protocol #2 (P-MPJPE) action-wise average: 44.4 mm
+Protocol #3 (N-MPJPE) action-wise average: 53.1 mm
+Velocity      (MPJVE) action-wise average: 4.27 mm
+Namespace(actions='*', architecture='3,3,3', batch_size=1024, bone_length_term=True, by_subject=False, causal=False, channels=1024, checkpoint='checkpoint', checkpoint_frequency=10, choice='Phoning', data_augmentation=True, dataset='h36m', dense=False, disable_optimizations=False, downsample=1, dropout=0.25, epochs=15, evaluate='', export_training_curves=False, keypoints='cpn_ft_h36m_dbb', learning_rate=0.001, linear_projection=False, lr_decay=0.95, no_eval=False, no_proj=False, render=False, resume='', stride=1, subjects_test='S9,S11', subjects_train='S1,S5,S6,S7,S8', subjects_unlabeled='', subset=1, test_time_augmentation=True, viz_action=None, viz_bitrate=3000, viz_camera=0, viz_downsample=1, viz_export=None, viz_limit=-1, viz_no_ground_truth=False, viz_output=None, viz_size=5, viz_skip=0, viz_subject=None, viz_video=None, warmup=1)
+Loading dataset...
+Preparing data...
+Loading 2D detections...
+INFO: Receptive field: 27 frames
+INFO: Trainable parameter count: 8555571
+INFO: Testing on 56088 frames
+INFO: Training on 115832 frames
+** Note: reported losses are averaged over all frames and test-time augmentation is not used here.
+** The final evaluation will be carried out after the last training epoch.
+[1] time 4.10 lr 0.001000 3d_train 386.971743 3d_eval 127.519526 3d_valid 149.290365
+[2] time 3.28 lr 0.000950 3d_train 125.148919 3d_eval 81.791546 3d_valid 99.820976
+[3] time 3.48 lr 0.000902 3d_train 84.938555 3d_eval 78.480632 3d_valid 93.331630
+[4] time 4.32 lr 0.000857 3d_train 68.261015 3d_eval 162.505616 3d_valid 190.764054
+[5] time 3.39 lr 0.000815 3d_train 72.388698 3d_eval 62.558238 3d_valid 77.439108
+[6] time 3.11 lr 0.000774 3d_train 58.703468 3d_eval 63.254912 3d_valid 85.265995
+[7] time 4.19 lr 0.000735 3d_train 53.706047 3d_eval 51.863439 3d_valid 70.513950
+[8] time 3.21 lr 0.000698 3d_train 50.848260 3d_eval 133.146710 3d_valid 164.867724
+[9] time 3.71 lr 0.000663 3d_train 53.209724 3d_eval 45.583455 3d_valid 71.584996
+[10] time 3.86 lr 0.000630 3d_train 47.208271 3d_eval 37.318831 3d_valid 64.237234
+Saving checkpoint to checkpoint/epoch_10.bin
+[11] time 3.29 lr 0.000599 3d_train 43.235342 3d_eval 37.080315 3d_valid 69.597331
+[12] time 3.82 lr 0.000569 3d_train 41.605494 3d_eval 34.390736 3d_valid 65.610426
+[13] time 3.56 lr 0.000540 3d_train 39.651872 3d_eval 43.235336 3d_valid 74.097620
+[14] time 3.14 lr 0.000513 3d_train 39.357878 3d_eval 34.043336 3d_valid 67.449426
+[15] time 3.67 lr 0.000488 3d_train 38.561297 3d_eval 38.397401 3d_valid 71.075792
+Evaluating...
+----Phoning----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 68.98799476351505 mm
+Protocol #2 Error (P-MPJPE): 46.657031084776285 mm
+Protocol #3 Error (N-MPJPE): 58.547056746601235 mm
+Velocity Error (MPJVE): 3.143922539299423 mm
+----------
+Protocol #1   (MPJPE) action-wise average: 69.0 mm
+Protocol #2 (P-MPJPE) action-wise average: 46.7 mm
+Protocol #3 (N-MPJPE) action-wise average: 58.5 mm
+Velocity      (MPJVE) action-wise average: 3.14 mm
+Namespace(actions='*', architecture='3,3,3', batch_size=1024, bone_length_term=True, by_subject=False, causal=False, channels=1024, checkpoint='checkpoint', checkpoint_frequency=10, choice='Photo', data_augmentation=True, dataset='h36m', dense=False, disable_optimizations=False, downsample=1, dropout=0.25, epochs=15, evaluate='', export_training_curves=False, keypoints='cpn_ft_h36m_dbb', learning_rate=0.001, linear_projection=False, lr_decay=0.95, no_eval=False, no_proj=False, render=False, resume='', stride=1, subjects_test='S9,S11', subjects_train='S1,S5,S6,S7,S8', subjects_unlabeled='', subset=1, test_time_augmentation=True, viz_action=None, viz_bitrate=3000, viz_camera=0, viz_downsample=1, viz_export=None, viz_limit=-1, viz_no_ground_truth=False, viz_output=None, viz_size=5, viz_skip=0, viz_subject=None, viz_video=None, warmup=1)
+Loading dataset...
+Preparing data...
+Loading 2D detections...
+INFO: Receptive field: 27 frames
+INFO: Trainable parameter count: 8555571
+INFO: Testing on 29320 frames
+INFO: Training on 76048 frames
+** Note: reported losses are averaged over all frames and test-time augmentation is not used here.
+** The final evaluation will be carried out after the last training epoch.
+[1] time 2.81 lr 0.001000 3d_train 453.726070 3d_eval 136.263827 3d_valid 140.365981
+[2] time 2.04 lr 0.000950 3d_train 197.707142 3d_eval 104.404263 3d_valid 119.293804
+[3] time 2.02 lr 0.000902 3d_train 116.555320 3d_eval 81.380748 3d_valid 100.422828
+[4] time 2.45 lr 0.000857 3d_train 112.233363 3d_eval 74.871378 3d_valid 98.820155
+[5] time 2.59 lr 0.000815 3d_train 79.646152 3d_eval 75.130188 3d_valid 96.740539
+[6] time 2.25 lr 0.000774 3d_train 70.060888 3d_eval 79.799715 3d_valid 109.985988
+[7] time 2.20 lr 0.000735 3d_train 66.916446 3d_eval 49.364932 3d_valid 80.525698
+[8] time 2.10 lr 0.000698 3d_train 61.663589 3d_eval 72.495657 3d_valid 96.692758
+[9] time 2.59 lr 0.000663 3d_train 56.991696 3d_eval 44.926934 3d_valid 79.644206
+[10] time 2.47 lr 0.000630 3d_train 55.127029 3d_eval 49.789679 3d_valid 85.059146
+Saving checkpoint to checkpoint/epoch_10.bin
+[11] time 2.12 lr 0.000599 3d_train 52.904865 3d_eval 40.428048 3d_valid 79.073822
+[12] time 2.07 lr 0.000569 3d_train 49.074586 3d_eval 42.934523 3d_valid 83.807294
+[13] time 2.58 lr 0.000540 3d_train 48.239841 3d_eval 54.628378 3d_valid 93.559318
+[14] time 2.59 lr 0.000513 3d_train 48.358592 3d_eval 41.636161 3d_valid 81.918124
+[15] time 2.16 lr 0.000488 3d_train 45.786621 3d_eval 47.585104 3d_valid 84.371263
+Evaluating...
+----Photo----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 82.64215211796932 mm
+Protocol #2 Error (P-MPJPE): 52.11513007560295 mm
+Protocol #3 Error (N-MPJPE): 69.14632197400861 mm
+Velocity Error (MPJVE): 3.5049890866423707 mm
+----------
+Protocol #1   (MPJPE) action-wise average: 82.6 mm
+Protocol #2 (P-MPJPE) action-wise average: 52.1 mm
+Protocol #3 (N-MPJPE) action-wise average: 69.1 mm
+Velocity      (MPJVE) action-wise average: 3.5 mm
+Namespace(actions='*', architecture='3,3,3', batch_size=1024, bone_length_term=True, by_subject=False, causal=False, channels=1024, checkpoint='checkpoint', checkpoint_frequency=10, choice='Posing', data_augmentation=True, dataset='h36m', dense=False, disable_optimizations=False, downsample=1, dropout=0.25, epochs=15, evaluate='', export_training_curves=False, keypoints='cpn_ft_h36m_dbb', learning_rate=0.001, linear_projection=False, lr_decay=0.95, no_eval=False, no_proj=False, render=False, resume='', stride=1, subjects_test='S9,S11', subjects_train='S1,S5,S6,S7,S8', subjects_unlabeled='', subset=1, test_time_augmentation=True, viz_action=None, viz_bitrate=3000, viz_camera=0, viz_downsample=1, viz_export=None, viz_limit=-1, viz_no_ground_truth=False, viz_output=None, viz_size=5, viz_skip=0, viz_subject=None, viz_video=None, warmup=1)
+Loading dataset...
+Preparing data...
+Loading 2D detections...
+INFO: Receptive field: 27 frames
+INFO: Trainable parameter count: 8555571
+INFO: Testing on 27280 frames
+INFO: Training on 69468 frames
+** Note: reported losses are averaged over all frames and test-time augmentation is not used here.
+** The final evaluation will be carried out after the last training epoch.
+[1] time 1.96 lr 0.001000 3d_train 439.752931 3d_eval 137.908413 3d_valid 115.318113
+[2] time 1.98 lr 0.000950 3d_train 201.176620 3d_eval 101.779039 3d_valid 91.871420
+[3] time 2.48 lr 0.000902 3d_train 127.414227 3d_eval 85.196862 3d_valid 79.385209
+[4] time 2.28 lr 0.000857 3d_train 98.226667 3d_eval 82.444162 3d_valid 79.733466
+[5] time 1.93 lr 0.000815 3d_train 80.301424 3d_eval 83.093436 3d_valid 87.376037
+[6] time 1.87 lr 0.000774 3d_train 73.823278 3d_eval 69.612369 3d_valid 70.477513
+[7] time 2.06 lr 0.000735 3d_train 67.110782 3d_eval 61.710784 3d_valid 74.188223
+[8] time 2.51 lr 0.000698 3d_train 60.432374 3d_eval 60.868645 3d_valid 73.846787
+[9] time 2.04 lr 0.000663 3d_train 59.044066 3d_eval 62.245038 3d_valid 73.130310
+[10] time 1.91 lr 0.000630 3d_train 58.753716 3d_eval 55.148012 3d_valid 68.899017
+Saving checkpoint to checkpoint/epoch_10.bin
+[11] time 1.92 lr 0.000599 3d_train 53.689318 3d_eval 60.482892 3d_valid 77.986800
+[12] time 2.43 lr 0.000569 3d_train 52.195314 3d_eval 53.856450 3d_valid 69.970008
+[13] time 2.43 lr 0.000540 3d_train 49.801688 3d_eval 57.970084 3d_valid 76.340714
+[14] time 1.89 lr 0.000513 3d_train 48.878973 3d_eval 56.159371 3d_valid 73.199014
+[15] time 2.02 lr 0.000488 3d_train 46.477729 3d_eval 59.096078 3d_valid 73.588307
+Evaluating...
+----Posing----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 70.59152789900074 mm
+Protocol #2 Error (P-MPJPE): 49.327486755512105 mm
+Protocol #3 Error (N-MPJPE): 65.89433276285676 mm
+Velocity Error (MPJVE): 3.7954116898351224 mm
+----------
+Protocol #1   (MPJPE) action-wise average: 70.6 mm
+Protocol #2 (P-MPJPE) action-wise average: 49.3 mm
+Protocol #3 (N-MPJPE) action-wise average: 65.9 mm
+Velocity      (MPJVE) action-wise average: 3.8 mm
+Namespace(actions='*', architecture='3,3,3', batch_size=1024, bone_length_term=True, by_subject=False, causal=False, channels=1024, checkpoint='checkpoint', checkpoint_frequency=10, choice='Purchases', data_augmentation=True, dataset='h36m', dense=False, disable_optimizations=False, downsample=1, dropout=0.25, epochs=15, evaluate='', export_training_curves=False, keypoints='cpn_ft_h36m_dbb', learning_rate=0.001, linear_projection=False, lr_decay=0.95, no_eval=False, no_proj=False, render=False, resume='', stride=1, subjects_test='S9,S11', subjects_train='S1,S5,S6,S7,S8', subjects_unlabeled='', subset=1, test_time_augmentation=True, viz_action=None, viz_bitrate=3000, viz_camera=0, viz_downsample=1, viz_export=None, viz_limit=-1, viz_no_ground_truth=False, viz_output=None, viz_size=5, viz_skip=0, viz_subject=None, viz_video=None, warmup=1)
+Loading dataset...
+Preparing data...
+Loading 2D detections...
+INFO: Receptive field: 27 frames
+INFO: Trainable parameter count: 8555571
+INFO: Testing on 19284 frames
+INFO: Training on 63080 frames
+** Note: reported losses are averaged over all frames and test-time augmentation is not used here.
+** The final evaluation will be carried out after the last training epoch.
+[1] time 1.73 lr 0.001000 3d_train 481.828645 3d_eval 131.285548 3d_valid 121.115361
+[2] time 2.17 lr 0.000950 3d_train 229.254849 3d_eval 105.414789 3d_valid 89.839000
+[3] time 2.19 lr 0.000902 3d_train 132.055302 3d_eval 183.999862 3d_valid 168.244864
+[4] time 1.81 lr 0.000857 3d_train 116.531732 3d_eval 90.439861 3d_valid 87.358404
+[5] time 1.84 lr 0.000815 3d_train 84.464166 3d_eval 195.048824 3d_valid 180.973316
+[6] time 1.71 lr 0.000774 3d_train 92.757256 3d_eval 99.093360 3d_valid 96.306917
+[7] time 2.02 lr 0.000735 3d_train 73.961056 3d_eval 73.026782 3d_valid 81.206261
+[8] time 2.16 lr 0.000698 3d_train 66.029662 3d_eval 67.451758 3d_valid 78.015883
+[9] time 1.95 lr 0.000663 3d_train 61.148089 3d_eval 60.802538 3d_valid 72.995753
+[10] time 1.82 lr 0.000630 3d_train 56.822454 3d_eval 78.195946 3d_valid 86.063373
+Saving checkpoint to checkpoint/epoch_10.bin
+[11] time 1.77 lr 0.000599 3d_train 59.046387 3d_eval 55.585358 3d_valid 70.121683
+[12] time 1.77 lr 0.000569 3d_train 52.530650 3d_eval 64.226886 3d_valid 77.253838
+[13] time 2.18 lr 0.000540 3d_train 54.566635 3d_eval 61.052424 3d_valid 72.725790
+[14] time 2.22 lr 0.000513 3d_train 50.305093 3d_eval 50.911842 3d_valid 66.305042
+[15] time 1.85 lr 0.000488 3d_train 50.748866 3d_eval 68.066548 3d_valid 84.070067
+Evaluating...
+----Purchases----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 82.08582575168879 mm
+Protocol #2 Error (P-MPJPE): 46.07291218917991 mm
+Protocol #3 Error (N-MPJPE): 61.60090336148403 mm
+Velocity Error (MPJVE): 3.651647722716869 mm
+----------
+Protocol #1   (MPJPE) action-wise average: 82.1 mm
+Protocol #2 (P-MPJPE) action-wise average: 46.1 mm
+Protocol #3 (N-MPJPE) action-wise average: 61.6 mm
+Velocity      (MPJVE) action-wise average: 3.65 mm
+Namespace(actions='*', architecture='3,3,3', batch_size=1024, bone_length_term=True, by_subject=False, causal=False, channels=1024, checkpoint='checkpoint', checkpoint_frequency=10, choice='Sitting', data_augmentation=True, dataset='h36m', dense=False, disable_optimizations=False, downsample=1, dropout=0.25, epochs=15, evaluate='', export_training_curves=False, keypoints='cpn_ft_h36m_dbb', learning_rate=0.001, linear_projection=False, lr_decay=0.95, no_eval=False, no_proj=False, render=False, resume='', stride=1, subjects_test='S9,S11', subjects_train='S1,S5,S6,S7,S8', subjects_unlabeled='', subset=1, test_time_augmentation=True, viz_action=None, viz_bitrate=3000, viz_camera=0, viz_downsample=1, viz_export=None, viz_limit=-1, viz_no_ground_truth=False, viz_output=None, viz_size=5, viz_skip=0, viz_subject=None, viz_video=None, warmup=1)
+Loading dataset...
+Preparing data...
+Loading 2D detections...
+INFO: Receptive field: 27 frames
+INFO: Trainable parameter count: 8555571
+INFO: Testing on 40276 frames
+INFO: Training on 116472 frames
+** Note: reported losses are averaged over all frames and test-time augmentation is not used here.
+** The final evaluation will be carried out after the last training epoch.
+[1] time 3.20 lr 0.001000 3d_train 391.658101 3d_eval 103.646892 3d_valid 135.113249
+[2] time 4.18 lr 0.000950 3d_train 120.546207 3d_eval 81.048403 3d_valid 113.762534
+[3] time 3.20 lr 0.000902 3d_train 85.302590 3d_eval 62.499610 3d_valid 97.295196
+[4] time 3.30 lr 0.000857 3d_train 69.706083 3d_eval 56.516347 3d_valid 93.630979
+[5] time 4.20 lr 0.000815 3d_train 62.285523 3d_eval 46.400040 3d_valid 88.035608
+[6] time 3.20 lr 0.000774 3d_train 57.032563 3d_eval 43.237858 3d_valid 81.518286
+[7] time 3.56 lr 0.000735 3d_train 51.668963 3d_eval 42.067132 3d_valid 81.764700
+[8] time 4.17 lr 0.000698 3d_train 47.830520 3d_eval 40.608001 3d_valid 82.633159
+[9] time 3.38 lr 0.000663 3d_train 46.790314 3d_eval 39.567013 3d_valid 81.848611
+[10] time 3.77 lr 0.000630 3d_train 44.682737 3d_eval 51.041653 3d_valid 86.617263
+Saving checkpoint to checkpoint/epoch_10.bin
+[11] time 3.89 lr 0.000599 3d_train 42.503793 3d_eval 34.036074 3d_valid 74.862850
+[12] time 3.42 lr 0.000569 3d_train 41.227294 3d_eval 36.047102 3d_valid 75.857886
+[13] time 3.83 lr 0.000540 3d_train 40.492967 3d_eval 32.155379 3d_valid 76.881162
+[14] time 3.81 lr 0.000513 3d_train 38.975878 3d_eval 36.576118 3d_valid 80.235757
+[15] time 3.33 lr 0.000488 3d_train 38.199841 3d_eval 29.978336 3d_valid 71.998814
+Evaluating...
+----Sitting----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 70.66530487276758 mm
+Protocol #2 Error (P-MPJPE): 54.46600744848349 mm
+Protocol #3 Error (N-MPJPE): 65.53449045116787 mm
+Velocity Error (MPJVE): 2.8425275190956376 mm
+----------
+Protocol #1   (MPJPE) action-wise average: 70.7 mm
+Protocol #2 (P-MPJPE) action-wise average: 54.5 mm
+Protocol #3 (N-MPJPE) action-wise average: 65.5 mm
+Velocity      (MPJVE) action-wise average: 2.84 mm
+
+<< output from stderr >>
+/gpfsdata/home/zeduoyu/anaconda3/lib/python3.8/site-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 10010). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at  /opt/conda/conda-bld/pytorch_1623448234945/work/c10/cuda/CUDAFunctions.cpp:115.)
+  return torch._C._cuda_getDeviceCount() > 0
+/gpfsdata/home/zeduoyu/anaconda3/lib/python3.8/site-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 10010). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at  /opt/conda/conda-bld/pytorch_1623448234945/work/c10/cuda/CUDAFunctions.cpp:115.)
+  return torch._C._cuda_getDeviceCount() > 0
+/gpfsdata/home/zeduoyu/anaconda3/lib/python3.8/site-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 10010). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at  /opt/conda/conda-bld/pytorch_1623448234945/work/c10/cuda/CUDAFunctions.cpp:115.)
+  return torch._C._cuda_getDeviceCount() > 0
+/gpfsdata/home/zeduoyu/anaconda3/lib/python3.8/site-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 10010). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at  /opt/conda/conda-bld/pytorch_1623448234945/work/c10/cuda/CUDAFunctions.cpp:115.)
+  return torch._C._cuda_getDeviceCount() > 0
+/gpfsdata/home/zeduoyu/anaconda3/lib/python3.8/site-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 10010). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at  /opt/conda/conda-bld/pytorch_1623448234945/work/c10/cuda/CUDAFunctions.cpp:115.)
+  return torch._C._cuda_getDeviceCount() > 0
+/gpfsdata/home/zeduoyu/anaconda3/lib/python3.8/site-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 10010). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at  /opt/conda/conda-bld/pytorch_1623448234945/work/c10/cuda/CUDAFunctions.cpp:115.)
+  return torch._C._cuda_getDeviceCount() > 0
+/gpfsdata/home/zeduoyu/anaconda3/lib/python3.8/site-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 10010). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at  /opt/conda/conda-bld/pytorch_1623448234945/work/c10/cuda/CUDAFunctions.cpp:115.)
+  return torch._C._cuda_getDeviceCount() > 0
+/gpfsdata/home/zeduoyu/anaconda3/lib/python3.8/site-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 10010). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at  /opt/conda/conda-bld/pytorch_1623448234945/work/c10/cuda/CUDAFunctions.cpp:115.)
+  return torch._C._cuda_getDeviceCount() > 0
+/gpfsdata/home/zeduoyu/anaconda3/lib/python3.8/site-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 10010). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at  /opt/conda/conda-bld/pytorch_1623448234945/work/c10/cuda/CUDAFunctions.cpp:115.)
+  return torch._C._cuda_getDeviceCount() > 0
