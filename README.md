@@ -33,7 +33,7 @@ wget https://dl.fbaipublicfiles.com/video-pose-3d/data_2d_h36m_detectron_ft_h36m
 
 ```shell
 cd ..
-python3 run.py -e 1 -k cpn_ft_h36m_dbb -arc 3,3,3
+python3 run.py -e 1 -k cpn_ft_h36m_dbb -arc 3,3,3 -choice Sit
 ```
 
 Note that the arguments can be changed. If you want to run a bigger project, simply add up `-e` to 80 and `3,3,3` (27 frames) to `3,3,3,3` (81 frames) or `3,3,3,3,3` (243 frames).

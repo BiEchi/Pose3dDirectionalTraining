@@ -50,15 +50,16 @@ Haining, Jiaxing\\
 \begin{abstract}
    In this essay we perform a directional training method based on \textit{VideoPose3D}. 
    The original paper utilizes a semi-supervised approach on different kinds of subjects
-   in the network, and we select each 
+   and different actions in the network, and we select each action as the only input of
+   the training dataset, and estimate the error in multiple protocols. Our approach is utilized
+   to reduce the error on \textit{Human3.6M}.
 \end{abstract}
 
 %%%%%%%%% BODY TEXT
 \section{Introduction}
 
 Our work focuses on the improvement of 3D human pose estimation in video.
-\textit{VideoPose3D} is the current state-of-the-art approach which formulate
-the problem as 2D keypoint detection followed by 3D pose estimation.
+\textit{VideoPose3D} is the current state-of-the-art approach which utilizes a fully convolutional model based on dilated temporal convolutions over 2D keypoints. \cite{pavllo20193d,pavlakos2017coarse}. 
 
 
 %-------------------------------------------------------------------------

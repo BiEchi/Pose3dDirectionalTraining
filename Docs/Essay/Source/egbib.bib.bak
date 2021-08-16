@@ -8,12 +8,7 @@
   pages     = {7753--7762},
 }
 
-@InProceedings{pavlakos2017coarse,
-  author    = {Pavlakos, Georgios and Zhou, Xiaowei and Derpanis, Konstantinos G and Daniilidis, Kostas},
-  booktitle = {Proceedings of the IEEE conference on computer vision and pattern recognition},
-  title     = {Coarse-to-fine volumetric prediction for single-image 3D human pose},
-  year      = {2017},
-  pages     = {7025--7034},
+@Article{,
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

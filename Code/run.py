@@ -23,6 +23,7 @@ from common.loss import *
 from common.generators import ChunkedGenerator, UnchunkedGenerator
 from time import time
 from common.utils import deterministic_random
+from common.directional import *
 
 args = parse_args()
 print(args)
@@ -52,7 +53,7 @@ else:
 print('Preparing data...')
 for subject in dataset.subjects():
     for action in dataset[subject].keys():
-        if (action == "Eating") or (action == "Eating 1") or (action == "Eating 2") or (action == "Eating 3"):
+        if is_directional(action, args.choice):
             anim = dataset[subject][action]
             # {'positions': array([[[-0.3384, -0.190176, 0.984829],
             #                       [-0.47563055, -0.179863, 0.99733394],
@@ -165,7 +166,7 @@ keypoints = keypoints['positions_2d'].item()
 for subject in dataset.subjects():
     assert subject in keypoints, 'Subject {} is missing from the 2D detections dataset'.format(subject)
     for action in dataset[subject].keys():
-        if (action == "Eating") or (action == "Eating 1") or (action == "Eating 2") or (action == "Eating 3"):
+        if is_directional(action, args.choice):
             assert action in keypoints[subject], 'Action {} of subject {} is missing from the 2D detections dataset'.format(action, subject)
             if 'positions_3d' not in dataset[subject][action]:
                 continue
@@ -184,7 +185,7 @@ for subject in dataset.subjects():
         
 for subject in keypoints.keys():
     for action in keypoints[subject]:
-        if (action == "Eating") or (action == "Eating 1") or (action == "Eating 2") or (action == "Eating 3"):
+        if is_directional(action, args.choice):
             for cam_idx, kps in enumerate(keypoints[subject][action]):
                 # Normalize camera frame
                 cam = dataset.cameras()[subject][cam_idx]
@@ -208,7 +209,7 @@ def fetch(subjects, action_filter=None, subset=1, parse_3d_poses=True):
     out_camera_params = []
     for subject in subjects:
         for action in keypoints[subject].keys():
-            if (action == "Eating") or (action == "Eating 1") or (action == "Eating 2") or (action == "Eating 3"):
+            if is_directional(action, args.choice):
                 if action_filter is not None:
                     found = False
                     for a in action_filter:
@@ -886,7 +887,7 @@ else:
             all_actions_by_subject[subject] = {}
 
         for action in dataset[subject].keys():
-            if (action == "Eating") or (action == "Eating 1") or (action == "Eating 2") or (action == "Eating 3"):
+            if is_directional(action, args.choice):
                 action_name = action.split(' ')[0]
                 if action_name not in all_actions:
                     all_actions[action_name] = []

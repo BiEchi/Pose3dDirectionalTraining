@@ -1,27 +1,3 @@
-----------ONE TIME----------
-
-INFO: Receptive field: 27 frames
-INFO: Trainable parameter count: 8555571
-INFO: Testing on 39308 frames
-INFO: Training on 109424 frames
-** Note: reported losses are averaged over all frames and test-time augmentation is not used here.
-** The final evaluation will be carried out after the last training epoch.
-[1] time 0.21 lr 0.001000 3d_train 378.087836 3d_eval 101.081098 3d_valid 121.182866
-Evaluating...
-----Eating----
-Test time augmentation: True
-Protocol #1 Error (MPJPE): 99.92693721606662 mm
-Protocol #2 Error (P-MPJPE): 81.2730162422579 mm
-Protocol #3 Error (N-MPJPE): 97.12537618395093 mm
-Velocity Error (MPJVE): 5.358179428028891 mm
-----------
-Protocol #1   (MPJPE) action-wise average: 99.9 mm
-Protocol #2 (P-MPJPE) action-wise average: 81.3 mm
-Protocol #3 (N-MPJPE) action-wise average: 97.1 mm
-Velocity      (MPJVE) action-wise average: 5.36 mm
-
-
-----------15 TIMES----------
 INFO: Receptive field: 27 frames
 INFO: Trainable parameter count: 8555571
 INFO: Testing on 39308 frames
