@@ -8,6 +8,7 @@
 \usepackage[section]{placeins}
 \usepackage{amssymb}
 \usepackage{float}
+\usepackage[ruled,linesnumbered]{algorithm2e}
 
 \graphicspath{ {./graphs/} }
 
@@ -70,7 +71,16 @@ using computer vision and machine learning techniques. Our work focuses on the i
 of 3D human pose estimation in video. The original \textit{VideoPose3D} model carries out the 
 result shown in Figure 1, and our model changes the idea with Figure 2.
 
-\includegraphics[scale=0.35]{model.png}
+
+\begin{figure}[H]
+	\begin{center}
+		%\fbox{\rule{0pt}{2in} \rule{0.9\linewidth}{0pt}}
+  		\includegraphics[width=0.9\linewidth]{model.png}
+	\end{center}
+   	\caption{The original model for \textit{VideoPose3D}}
+	\label{fig:long}
+	\label{fig:onecol}
+\end{figure}
 
 %-------------------------------------------------------------------------
 \subsection{Action-based Learning}
@@ -84,8 +94,16 @@ be expressed as
 \begin{equation}
 	\sum_{i\in actions}{f(i)} = f(Sitting)\cdot t
 \end{equation}
+
 where $f$ stands for the frames of subject, and $t$ means the number of epochs of our action-based 
-training.
+training. Note that the unit of $t$ is unit-epoch instead of epoch. The unit-epoch stands for 1 epoch
+of one action. According to the dataset we utilize, \textit{Human3.6M}, there are 15 actions for each
+subject. Thus, the relationship between epoch and unit-epoch can be expressed mathematically as below.
+
+\begin{equation}
+	t_0 = t_{unit}\cdot 15
+\end{equation}
+
 
 In this approach, we utilize only one time of action, which means we save more data; and we also produce
 the results in the same time, the evidence can be illustrated by formula (1). After testing, we conclude 
@@ -93,7 +111,62 @@ that our work outperforms the original work by 11\%.
 
 The principle of our work is shown below.
 
-\includegraphics[scale=0.35]{model_new}
+
+\begin{figure}[H]
+	\begin{center}
+		%\fbox{\rule{0pt}{2in} \rule{0.9\linewidth}{0pt}}
+  		\includegraphics[width=0.9\linewidth]{new_model.png}
+	\end{center}
+   	\caption{The action-based, multi-epoch training method for \textit{VideoPose3D} (our work)}
+	\label{fig:long}
+	\label{fig:onecol}
+\end{figure}
+
+
+
+\subsection{Iterative Training}
+
+In our model we also changed the process of training in the original research. In the original research,
+it takes 15 unit-epochs to run a single epoch, because there are 15 types of actions. In our work, we can
+tweak the number of unit-epochs not necessarily to be a multiple of 15, which makes it more flexible to 
+observe and iterate. Shown below is the algorithm for our iterative training when not so many epochs are 
+available (we take 2 epochs for example).
+
+
+\begin{algorithm}
+  \caption{Original \textit{VideoPose3D} Model}
+  \SetAlgoLined
+  
+  \KwData{Training data, testing data, ground-truth data, total training epoch = 2.}
+  \KwResult{Error value.}
+  
+  \For{\textsc{epoch} in \textsc{2}}
+  	{
+ 		\textsc{Err}=VideoPose3D(\textsc{Train, Test, GT})\;
+  		print(\textsc{Err})\;
+  		
+  	}
+  
+ \Return{\textsc{Err}}\;
+\end{algorithm}
+
+\begin{algorithm}
+  \caption{Our Action-based Approach}
+  \SetAlgoLined
+  
+  \KwData{Training data, testing data, ground-truth data, total training epoch = 2, action type.}
+  \KwResult{Error value.}
+  
+  \For{\textsc{epoch} in $2\cdot 15$}
+  	{
+ 		\textsc{Err for Action}=\textbf{VideoPose3D}(\textsc{Train, Test, GT, Action})\;
+  		\textbf{print}(\textsc{Err for Action})\;
+  		
+  	}
+  
+ \Return{\textsc{Err for Action}}\;
+\end{algorithm}
+
 
 %------------------------------------------------------------------------
 \section{Related Work}
@@ -116,9 +189,15 @@ many authors had mentioned CNN in temporal models. Some researches has also show
 idea of using a spacial-temporal model being useful \cite{7298734}, but that's not utilized in our 
 research.
 
-\includegraphics[scale=0.25]{original.png}
-
-
+\begin{figure}[H]
+	\begin{center}
+		%\fbox{\rule{0pt}{2in} \rule{0.9\linewidth}{0pt}}
+  		\includegraphics[width=0.9\linewidth]{original.png}
+	\end{center}
+   	\caption{The overall model of \textit{VideoPose3D}}
+	\label{fig:long}
+	\label{fig:onecol}
+\end{figure}
 
 %-------------------------------------------------------------------------
 \subsection{Action-based Learning}
@@ -140,7 +219,7 @@ in some deep images \cite{detone2016deep}.
 
 For the code of this project, please refer to the url below.
 
- \url{https://github.com/BiEchi/Pose3dDirectionalTraining}. 
+\url{https://github.com/BiEchi/Pose3dDirectionalTraining}. 
  
 The detailed experimental setup can also be explored in \textit{README.md} in the github repo. To reproduce
 the results, you need to test for 15 times for each type of action, and it's preferable to test for multiple
@@ -156,68 +235,78 @@ unit are millimeter.
 \subsection{Small Number of Epochs}
 
 In this part we estimate the errors with a small amount of time. The epoch of the original test was set to 
-be 1 epoch (unit epoch), and the epoch of the action-based test was set to 15 epochs.
+be 1 unit epoch, and the epoch of the action-based test was set to 15 epochs.
 
 \begin{table}[H]
 \caption{MPJPE, 3*3, unit-epoch}
 
+\begin{center}
+
 \begin{tabular}{cccc}
 
 \hline
-No. & Action & Original, MPJPE & Action-based, MPJPE\\
+No. & Action & Original & Action-based \\
 \hline
 
 1&Purchases& 60.55 & 82.09 \\
 2&Posing& 57.60 & 70.59\\
-3&Walking& 51.82 \\
-4&Sitting& 70.49 & 70.56 \\
-5&Walkdog& 68.15 & \\
+3&Walking& 51.82 & \textbf{44.22} \\
+4&Sitting& 70.49 & \textbf{70.36} \\
+5&Walkdog& 68.15 & \textbf{56.14} \\
 6&Greeting& 58.62 & 61.38\\
-7&Waiting& 59.07 & \\
-8&WalkTogether& 53.13 & \\
+7&Waiting& 59.07 & 79.48\\
+8&WalkTogether& 53.13 & 56.15\\
 9&Phoning& 61.27 & 68.99 \\
 10&Discussion& 61.36 & 71.88 \\
-11&SittingDown& 84.68 & \\
+11&SittingDown& 84.68 & \textbf{79.43}\\
 12&Eating&  56.34 & \textbf{52.07} \\
-13&Smoking& 60.45 & \\
+13&Smoking& 60.45 & \textbf{60.25}\\
 14&Directions& 54.51 & 70.50 \\
 15&Photo& 68.57 & 82.64\\
-&Avg& 61.8 &\\
+&\textit{Avg}& \textit{61.8} & \textit{67.08}\\
 
 
 \hline
 \end{tabular}
+
+\end{center}
+
 \end{table}
 
+According to the result, we can primarily decide the fact that 
 
 \begin{table}[H]
 \caption{Velocity Error (MPJPE), 3*3, unit-epoch}
 
+\begin{center}
 
 \begin{tabular}{cccc}
 \hline
-No. & Action & Original, Velo-M  & Action-based, Velo-M\\
+No. & Action & Original & Action-based \\
 \hline
 
 1&Purchases& 3.93 & \textbf{3.65} \\
 2&Posing& 3.44 & 3.79 \\
-3&Walking& 4.51 \\
+3&Walking& 4.51 & \textbf{3.77}\\
 4&Sitting& 3.14 & \textbf{2.84} \\
-5&Walkdog& 4.68 & \\
+5&Walkdog& 4.68 & \textbf{4.37} \\
 6&Greeting& 4.42 & \textbf{4.27}\\
-7&Waiting& 3.34 & \\
-8&WalkTogether& 4.08 & \\
+7&Waiting& 3.34 & \textbf{3.55} \\
+8&WalkTogether& 4.08 & \textbf{3.49}\\
 9&Phoning& 3.31 & \textbf{3.14} \\
 10&Discussion& 4.02 & 4.28 \\
-11&SittingDown& 4.21 & \\
+11&SittingDown& 4.21 & \textbf{3.90}\\
 12&Eating& 3.14 & \textbf{3.01} \\
-13&Smoking& 3.36 & \\
+13&Smoking& 3.36 & \textbf{3.05}\\
 14&Directions& 3.84 & \textbf{3.78}\\
 15&Photo& 3.58 & \textbf{3.50}\\
-&Avg& 3.8 &\\
+&\textit{Avg}& \textit{3.8} & \textit{\textbf{3.63}}\\
 
 \hline
 \end{tabular}
+
+\end{center}
+
 \end{table}
 
 
@@ -259,14 +348,14 @@ Epochs & Epoch Units & Original & Eating-based\\
 1& NaN & NaN & 138.86 \\
 5& NaN & NaN & 96.52  \\
 10& NaN & NaN & 65.02  \\
-15& 1 & 56.34 & 60.21 \\
-30& 2 & 2.24 mm & 52.06 \\
-45& 3 & / & 50.28  \\
-60& 4 & 2.24 mm & 50.58  \\
-75& 5 & 2.24 mm & 50.49  \\
-90& 6 & 2.24 mm & 50.37 \\
-450& 10 & 2.24 mm & 50.53 \\
-1200& 80 & 2.24 mm & 50.45 \\
+15& 1 & ? & 60.21 \\
+30& 2 & ? & 52.06 \\
+45& 3 & ? & 50.28  \\
+60& 4 & ? & 50.58  \\
+75& 5 & ? & 50.49  \\
+90& 6 & ? & 50.37 \\
+450& 10 & ? & 50.53 \\
+1200& 80 & ? & 50.45 \\
 
 
 \hline
@@ -275,13 +364,27 @@ Epochs & Epoch Units & Original & Eating-based\\
 
 Transforming data into more readable format we gain the graph below.
 
-\includegraphics[scale=0.18]{MPJPE_epoch_overall.png}
+\begin{figure}[H]
+	\begin{center}
+		%\fbox{\rule{0pt}{2in} \rule{0.9\linewidth}{0pt}}
+  		\includegraphics[width=0.9\linewidth]{MPJPE_epoch_overall.png}
+	\end{center}
+   	\caption{Relationship between MPJPE and epoch (original)}
+	\label{fig:long}
+	\label{fig:onecol}
+\end{figure}
 
-Zooming in the graph we can find the result below.
-
-\includegraphics[scale=0.18]{MPJPE_epoch_zoomed.png}
 
 
+\begin{figure}[H]
+	\begin{center}
+		%\fbox{\rule{0pt}{2in} \rule{0.9\linewidth}{0pt}}
+  		\includegraphics[width=0.9\linewidth]{MPJPE_epoch_zoomed.png}
+	\end{center}
+   	\caption{Relationship between MPJPE and epoch (Zoomed)}
+	\label{fig:long}
+	\label{fig:onecol}
+\end{figure}
 
 \section{Conclusion}
 According to the results shown above, we conclude that the action-based model has a better performance on small epochs because 

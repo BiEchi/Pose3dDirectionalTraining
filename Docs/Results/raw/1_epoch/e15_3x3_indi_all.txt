@@ -1,4 +1,58 @@
-<< output from stdout >>
+Sender: LSF System <lsfadmin@gpu06>
+Subject: Job 44402: <jackposetask> in cluster <cluster1> Done
+
+Job <jackposetask> was submitted from host <gpu01> by user <zeduoyu> in cluster <cluster1>.
+Job was executed on host(s) <gpu06>, in queue <gpuq>, as user <zeduoyu> in cluster <cluster1>.
+</gpfsdata/home/zeduoyu> was used as the home directory.
+</gpfsdata/home/zeduoyu/jackfiles/Pose3dDirectionalTraining> was used as the working directory.
+Started at Results reported on 
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#BSUB -n 1
+#BSUB -R "select[ngpus>0] rusage [ngpus_shared=1]"
+#BSUB -e ./Temp/%j.err
+#BSUB -o ./Temp/%J.out
+#BSUB -q gpuq
+#BSUB -J jackposetask
+cd /gpfsdata/home/zeduoyu/jackfiles/Pose3dDirectionalTraining/VideoPose3D/
+python run.py.new -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho Directions
+python run.py.new -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho Discussion
+python run.py.new -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho Eating
+python run.py.new -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho Greeting
+python run.py.new -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho Phoning
+python run.py.new -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho Photo
+python run.py.new -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho Posing
+python run.py.new -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho Purchases
+python run.py.new -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho Sitting
+python run.py.new -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho SittingDown
+python run.py.new -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho Smoking
+python run.py.new -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho Waiting
+python run.py.new -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho WalkDog
+python run.py.new -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho Walking
+python run.py.new -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho WalkTogether
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   1139625.88 sec.
+    Max Memory :                                 2025 MB
+    Average Memory :                             1819.77 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   2 MB
+    Max Processes :                              4
+    Max Threads :                                29
+    Run time :                                   43309 sec.
+    Turnaround time :                            43309 sec.
+
+The output (if any) follows:
+
 Namespace(actions='*', architecture='3,3,3', batch_size=1024, bone_length_term=True, by_subject=False, causal=False, channels=1024, checkpoint='checkpoint', checkpoint_frequency=10, choice='Directions', data_augmentation=True, dataset='h36m', dense=False, disable_optimizations=False, downsample=1, dropout=0.25, epochs=15, evaluate='', export_training_curves=False, keypoints='cpn_ft_h36m_dbb', learning_rate=0.001, linear_projection=False, lr_decay=0.95, no_eval=False, no_proj=False, render=False, resume='', stride=1, subjects_test='S9,S11', subjects_train='S1,S5,S6,S7,S8', subjects_unlabeled='', subset=1, test_time_augmentation=True, viz_action=None, viz_bitrate=3000, viz_camera=0, viz_downsample=1, viz_export=None, viz_limit=-1, viz_no_ground_truth=False, viz_output=None, viz_size=5, viz_skip=0, viz_subject=None, viz_video=None, warmup=1)
 Loading dataset...
 Preparing data...
@@ -2311,23 +2365,237 @@ Protocol #1   (MPJPE) action-wise average: 70.7 mm
 Protocol #2 (P-MPJPE) action-wise average: 54.5 mm
 Protocol #3 (N-MPJPE) action-wise average: 65.5 mm
 Velocity      (MPJVE) action-wise average: 2.84 mm
+Namespace(actions='*', architecture='3,3,3', batch_size=1024, bone_length_term=True, by_subject=False, causal=False, channels=1024, checkpoint='checkpoint', checkpoint_frequency=10, choice='SittingDown', data_augmentation=True, dataset='h36m', dense=False, disable_optimizations=False, downsample=1, dropout=0.25, epochs=15, evaluate='', export_training_curves=False, keypoints='cpn_ft_h36m_dbb', learning_rate=0.001, linear_projection=False, lr_decay=0.95, no_eval=False, no_proj=False, render=False, resume='', stride=1, subjects_test='S9,S11', subjects_train='S1,S5,S6,S7,S8', subjects_unlabeled='', subset=1, test_time_augmentation=True, viz_action=None, viz_bitrate=3000, viz_camera=0, viz_downsample=1, viz_export=None, viz_limit=-1, viz_no_ground_truth=False, viz_output=None, viz_size=5, viz_skip=0, viz_subject=None, viz_video=None, warmup=1)
+Loading dataset...
+Preparing data...
+Loading 2D detections...
+INFO: Receptive field: 27 frames
+INFO: Trainable parameter count: 8555571
+INFO: Testing on 33324 frames
+INFO: Training on 129232 frames
+** Note: reported losses are averaged over all frames and test-time augmentation is not used here.
+** The final evaluation will be carried out after the last training epoch.
+[1] time 4.48 lr 0.001000 3d_train 353.884541 3d_eval 114.203101 3d_valid 177.469390
+[2] time 3.47 lr 0.000950 3d_train 133.855171 3d_eval 136.143091 3d_valid 250.072548
+[3] time 4.03 lr 0.000902 3d_train 98.152365 3d_eval 71.681230 3d_valid 121.711506
+[4] time 4.02 lr 0.000857 3d_train 80.819874 3d_eval 66.599219 3d_valid 117.917469
+[5] time 3.76 lr 0.000815 3d_train 73.892517 3d_eval 64.451187 3d_valid 113.415627
+[6] time 4.57 lr 0.000774 3d_train 67.881175 3d_eval 57.464895 3d_valid 104.258811
+[7] time 3.67 lr 0.000735 3d_train 64.584266 3d_eval 46.387698 3d_valid 94.158303
+[8] time 4.04 lr 0.000698 3d_train 60.158294 3d_eval 49.803921 3d_valid 92.198673
+[9] time 4.08 lr 0.000663 3d_train 55.979222 3d_eval 40.618037 3d_valid 85.519252
+[10] time 3.60 lr 0.000630 3d_train 53.473325 3d_eval 41.125196 3d_valid 86.471714
+Saving checkpoint to checkpoint/epoch_10.bin
+[11] time 3.86 lr 0.000599 3d_train 52.581742 3d_eval 52.888555 3d_valid 97.736734
+[12] time 3.97 lr 0.000569 3d_train 50.775775 3d_eval 44.877877 3d_valid 89.413068
+[13] time 3.66 lr 0.000540 3d_train 48.884941 3d_eval 36.880614 3d_valid 83.498979
+[14] time 4.55 lr 0.000513 3d_train 47.363585 3d_eval 39.179307 3d_valid 84.738910
+[15] time 3.59 lr 0.000488 3d_train 46.158656 3d_eval 36.198343 3d_valid 80.884483
+Evaluating...
+----SittingDown----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 79.43011932486411 mm
+Protocol #2 Error (P-MPJPE): 62.223649917226524 mm
+Protocol #3 Error (N-MPJPE): 75.35010314234742 mm
+Velocity Error (MPJVE): 3.9009064579022126 mm
+----------
+Protocol #1   (MPJPE) action-wise average: 79.4 mm
+Protocol #2 (P-MPJPE) action-wise average: 62.2 mm
+Protocol #3 (N-MPJPE) action-wise average: 75.4 mm
+Velocity      (MPJVE) action-wise average: 3.9 mm
+Namespace(actions='*', architecture='3,3,3', batch_size=1024, bone_length_term=True, by_subject=False, causal=False, channels=1024, checkpoint='checkpoint', checkpoint_frequency=10, choice='Smoking', data_augmentation=True, dataset='h36m', dense=False, disable_optimizations=False, downsample=1, dropout=0.25, epochs=15, evaluate='', export_training_curves=False, keypoints='cpn_ft_h36m_dbb', learning_rate=0.001, linear_projection=False, lr_decay=0.95, no_eval=False, no_proj=False, render=False, resume='', stride=1, subjects_test='S9,S11', subjects_train='S1,S5,S6,S7,S8', subjects_unlabeled='', subset=1, test_time_augmentation=True, viz_action=None, viz_bitrate=3000, viz_camera=0, viz_downsample=1, viz_export=None, viz_limit=-1, viz_no_ground_truth=False, viz_output=None, viz_size=5, viz_skip=0, viz_subject=None, viz_video=None, warmup=1)
+Loading dataset...
+Preparing data...
+Loading 2D detections...
+INFO: Receptive field: 27 frames
+INFO: Trainable parameter count: 8555571
+INFO: Testing on 55552 frames
+INFO: Training on 133252 frames
+** Note: reported losses are averaged over all frames and test-time augmentation is not used here.
+** The final evaluation will be carried out after the last training epoch.
+[1] time 4.16 lr 0.001000 3d_train 355.967932 3d_eval 102.373920 3d_valid 112.967187
+[2] time 4.36 lr 0.000950 3d_train 110.800371 3d_eval 83.331562 3d_valid 103.930336
+[3] time 4.02 lr 0.000902 3d_train 80.776524 3d_eval 78.887896 3d_valid 98.126467
+[4] time 4.97 lr 0.000857 3d_train 66.755759 3d_eval 53.968563 3d_valid 80.702100
+[5] time 3.85 lr 0.000815 3d_train 59.073910 3d_eval 61.730928 3d_valid 88.067817
+[6] time 4.37 lr 0.000774 3d_train 54.468584 3d_eval 48.416726 3d_valid 73.037982
+[7] time 4.36 lr 0.000735 3d_train 50.513043 3d_eval 44.714917 3d_valid 73.307802
+[8] time 3.79 lr 0.000698 3d_train 47.010488 3d_eval 46.136195 3d_valid 72.600279
+[9] time 4.61 lr 0.000663 3d_train 44.824908 3d_eval 41.983594 3d_valid 70.574829
+[10] time 3.87 lr 0.000630 3d_train 43.341581 3d_eval 41.498786 3d_valid 66.912920
+Saving checkpoint to checkpoint/epoch_10.bin
+[11] time 4.61 lr 0.000599 3d_train 41.298079 3d_eval 38.206310 3d_valid 70.394131
+[12] time 3.84 lr 0.000569 3d_train 39.800591 3d_eval 32.159263 3d_valid 63.690548
+[13] time 3.83 lr 0.000540 3d_train 38.511311 3d_eval 33.126462 3d_valid 65.602300
+[14] time 4.62 lr 0.000513 3d_train 37.721881 3d_eval 32.417555 3d_valid 63.371564
+[15] time 3.95 lr 0.000488 3d_train 36.198222 3d_eval 29.788083 3d_valid 62.117264
+Evaluating...
+----Smoking----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 60.652934086685015 mm
+Protocol #2 Error (P-MPJPE): 47.39381958666678 mm
+Protocol #3 Error (N-MPJPE): 58.411556365993626 mm
+Velocity Error (MPJVE): 3.053733511646289 mm
+----------
+Protocol #1   (MPJPE) action-wise average: 60.7 mm
+Protocol #2 (P-MPJPE) action-wise average: 47.4 mm
+Protocol #3 (N-MPJPE) action-wise average: 58.4 mm
+Velocity      (MPJVE) action-wise average: 3.05 mm
+Namespace(actions='*', architecture='3,3,3', batch_size=1024, bone_length_term=True, by_subject=False, causal=False, channels=1024, checkpoint='checkpoint', checkpoint_frequency=10, choice='Waiting', data_augmentation=True, dataset='h36m', dense=False, disable_optimizations=False, downsample=1, dropout=0.25, epochs=15, evaluate='', export_training_curves=False, keypoints='cpn_ft_h36m_dbb', learning_rate=0.001, linear_projection=False, lr_decay=0.95, no_eval=False, no_proj=False, render=False, resume='', stride=1, subjects_test='S9,S11', subjects_train='S1,S5,S6,S7,S8', subjects_unlabeled='', subset=1, test_time_augmentation=True, viz_action=None, viz_bitrate=3000, viz_camera=0, viz_downsample=1, viz_export=None, viz_limit=-1, viz_no_ground_truth=False, viz_output=None, viz_size=5, viz_skip=0, viz_subject=None, viz_video=None, warmup=1)
+Loading dataset...
+Preparing data...
+Loading 2D detections...
+INFO: Receptive field: 27 frames
+INFO: Trainable parameter count: 8555571
+INFO: Testing on 37864 frames
+INFO: Training on 115296 frames
+** Note: reported losses are averaged over all frames and test-time augmentation is not used here.
+** The final evaluation will be carried out after the last training epoch.
+[1] time 3.85 lr 0.001000 3d_train 386.683882 3d_eval 120.794746 3d_valid 140.841711
+[2] time 3.28 lr 0.000950 3d_train 127.753849 3d_eval 90.155028 3d_valid 121.126123
+[3] time 3.22 lr 0.000902 3d_train 82.628106 3d_eval 140.471268 3d_valid 166.559921
+[4] time 4.57 lr 0.000857 3d_train 70.937044 3d_eval 82.390390 3d_valid 116.054561
+[5] time 3.15 lr 0.000815 3d_train 60.176331 3d_eval 65.305733 3d_valid 94.607288
+[6] time 3.28 lr 0.000774 3d_train 55.019880 3d_eval 61.755215 3d_valid 100.808214
+[7] time 4.10 lr 0.000735 3d_train 50.763444 3d_eval 61.884915 3d_valid 99.364197
+[8] time 3.16 lr 0.000698 3d_train 48.513661 3d_eval 47.176002 3d_valid 90.158682
+[9] time 3.22 lr 0.000663 3d_train 45.547727 3d_eval 43.425571 3d_valid 86.124806
+[10] time 4.01 lr 0.000630 3d_train 42.931225 3d_eval 49.541864 3d_valid 92.847402
+Saving checkpoint to checkpoint/epoch_10.bin
+[11] time 3.24 lr 0.000599 3d_train 41.790275 3d_eval 48.192826 3d_valid 92.706790
+[12] time 3.21 lr 0.000569 3d_train 41.844075 3d_eval 45.898975 3d_valid 89.476039
+[13] time 4.11 lr 0.000540 3d_train 38.538895 3d_eval 39.765181 3d_valid 84.724313
+[14] time 3.16 lr 0.000513 3d_train 37.685071 3d_eval 40.701886 3d_valid 85.469492
+[15] time 3.13 lr 0.000488 3d_train 36.107006 3d_eval 35.679159 3d_valid 81.707502
+Evaluating...
+----Waiting----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 79.47829988789613 mm
+Protocol #2 Error (P-MPJPE): 47.52323601946641 mm
+Protocol #3 Error (N-MPJPE): 63.88317146247023 mm
+Velocity Error (MPJVE): 3.5469732719792115 mm
+----------
+Protocol #1   (MPJPE) action-wise average: 79.5 mm
+Protocol #2 (P-MPJPE) action-wise average: 47.5 mm
+Protocol #3 (N-MPJPE) action-wise average: 63.9 mm
+Velocity      (MPJVE) action-wise average: 3.55 mm
+Namespace(actions='*', architecture='3,3,3', batch_size=1024, bone_length_term=True, by_subject=False, causal=False, channels=1024, checkpoint='checkpoint', checkpoint_frequency=10, choice='WalkDog', data_augmentation=True, dataset='h36m', dense=False, disable_optimizations=False, downsample=1, dropout=0.25, epochs=15, evaluate='', export_training_curves=False, keypoints='cpn_ft_h36m_dbb', learning_rate=0.001, linear_projection=False, lr_decay=0.95, no_eval=False, no_proj=False, render=False, resume='', stride=1, subjects_test='S9,S11', subjects_train='S1,S5,S6,S7,S8', subjects_unlabeled='', subset=1, test_time_augmentation=True, viz_action=None, viz_bitrate=3000, viz_camera=0, viz_downsample=1, viz_export=None, viz_limit=-1, viz_no_ground_truth=False, viz_output=None, viz_size=5, viz_skip=0, viz_subject=None, viz_video=None, warmup=1)
+Loading dataset...
+Preparing data...
+Loading 2D detections...
+INFO: Receptive field: 27 frames
+INFO: Trainable parameter count: 8555571
+INFO: Testing on 28304 frames
+INFO: Training on 79412 frames
+** Note: reported losses are averaged over all frames and test-time augmentation is not used here.
+** The final evaluation will be carried out after the last training epoch.
+[1] time 3.11 lr 0.001000 3d_train 470.374495 3d_eval 151.793981 3d_valid 173.485152
+[2] time 2.22 lr 0.000950 3d_train 197.236095 3d_eval 127.058895 3d_valid 162.470799
+[3] time 2.22 lr 0.000902 3d_train 116.170493 3d_eval 104.946356 3d_valid 137.621524
+[4] time 2.17 lr 0.000857 3d_train 91.344918 3d_eval 96.115541 3d_valid 126.571946
+[5] time 3.08 lr 0.000815 3d_train 79.424659 3d_eval 85.986653 3d_valid 123.612679
+[6] time 2.27 lr 0.000774 3d_train 73.695170 3d_eval 94.631521 3d_valid 125.668414
+[7] time 2.27 lr 0.000735 3d_train 68.616368 3d_eval 77.676095 3d_valid 104.984012
+[8] time 2.38 lr 0.000698 3d_train 61.543148 3d_eval 60.555265 3d_valid 83.723039
+[9] time 2.92 lr 0.000663 3d_train 62.814784 3d_eval 138.615225 3d_valid 177.881642
+[10] time 2.39 lr 0.000630 3d_train 82.580335 3d_eval 73.411279 3d_valid 89.787051
+Saving checkpoint to checkpoint/epoch_10.bin
+[11] time 2.23 lr 0.000599 3d_train 62.537195 3d_eval 57.205767 3d_valid 78.227558
+[12] time 2.13 lr 0.000569 3d_train 58.455511 3d_eval 57.647737 3d_valid 72.054789
+[13] time 2.39 lr 0.000540 3d_train 53.941870 3d_eval 56.822587 3d_valid 79.006605
+[14] time 2.80 lr 0.000513 3d_train 53.413967 3d_eval 50.561022 3d_valid 70.628572
+[15] time 2.15 lr 0.000488 3d_train 50.032169 3d_eval 82.156977 3d_valid 105.089859
+Evaluating...
+----WalkDog----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 97.71744920142993 mm
+Protocol #2 Error (P-MPJPE): 56.83827238950253 mm
+Protocol #3 Error (N-MPJPE): 71.30644555069894 mm
+Velocity Error (MPJVE): 4.369839279739796 mm
+----------
+Protocol #1   (MPJPE) action-wise average: 97.7 mm
+Protocol #2 (P-MPJPE) action-wise average: 56.8 mm
+Protocol #3 (N-MPJPE) action-wise average: 71.3 mm
+Velocity      (MPJVE) action-wise average: 4.37 mm
+Namespace(actions='*', architecture='3,3,3', batch_size=1024, bone_length_term=True, by_subject=False, causal=False, channels=1024, checkpoint='checkpoint', checkpoint_frequency=10, choice='Walking', data_augmentation=True, dataset='h36m', dense=False, disable_optimizations=False, downsample=1, dropout=0.25, epochs=15, evaluate='', export_training_curves=False, keypoints='cpn_ft_h36m_dbb', learning_rate=0.001, linear_projection=False, lr_decay=0.95, no_eval=False, no_proj=False, render=False, resume='', stride=1, subjects_test='S9,S11', subjects_train='S1,S5,S6,S7,S8', subjects_unlabeled='', subset=1, test_time_augmentation=True, viz_action=None, viz_bitrate=3000, viz_camera=0, viz_downsample=1, viz_export=None, viz_limit=-1, viz_no_ground_truth=False, viz_output=None, viz_size=5, viz_skip=0, viz_subject=None, viz_video=None, warmup=1)
+Loading dataset...
+Preparing data...
+Loading 2D detections...
+INFO: Receptive field: 27 frames
+INFO: Trainable parameter count: 8555571
+INFO: Testing on 29264 frames
+INFO: Training on 132744 frames
+** Note: reported losses are averaged over all frames and test-time augmentation is not used here.
+** The final evaluation will be carried out after the last training epoch.
+[1] time 3.72 lr 0.001000 3d_train 379.514379 3d_eval 101.624254 3d_valid 108.753472
+[2] time 4.61 lr 0.000950 3d_train 111.432361 3d_eval 73.109258 3d_valid 76.659473
+[3] time 3.54 lr 0.000902 3d_train 79.388031 3d_eval 85.262915 3d_valid 88.743190
+[4] time 4.33 lr 0.000857 3d_train 64.228317 3d_eval 65.174043 3d_valid 70.180827
+[5] time 3.97 lr 0.000815 3d_train 54.236988 3d_eval 47.136146 3d_valid 53.018434
+[6] time 3.60 lr 0.000774 3d_train 51.719185 3d_eval 56.793368 3d_valid 67.454775
+[7] time 4.56 lr 0.000735 3d_train 47.837132 3d_eval 42.535725 3d_valid 52.363137
+[8] time 3.76 lr 0.000698 3d_train 44.448885 3d_eval 40.532506 3d_valid 51.986885
+[9] time 4.21 lr 0.000663 3d_train 41.428267 3d_eval 41.669968 3d_valid 53.123486
+[10] time 4.13 lr 0.000630 3d_train 39.391268 3d_eval 35.961407 3d_valid 48.918191
+Saving checkpoint to checkpoint/epoch_10.bin
+[11] time 3.73 lr 0.000599 3d_train 39.262678 3d_eval 48.517038 3d_valid 64.228454
+[12] time 4.57 lr 0.000569 3d_train 37.208821 3d_eval 33.487317 3d_valid 49.498085
+[13] time 3.63 lr 0.000540 3d_train 35.728268 3d_eval 34.809799 3d_valid 51.997087
+[14] time 3.71 lr 0.000513 3d_train 34.322163 3d_eval 36.772430 3d_valid 51.229133
+[15] time 4.27 lr 0.000488 3d_train 34.420981 3d_eval 29.633522 3d_valid 46.352733
+Evaluating...
+----Walking----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 44.21816838300798 mm
+Protocol #2 Error (P-MPJPE): 31.819196852337022 mm
+Protocol #3 Error (N-MPJPE): 40.691785393420254 mm
+Velocity Error (MPJVE): 3.7739686302569817 mm
+----------
+Protocol #1   (MPJPE) action-wise average: 44.2 mm
+Protocol #2 (P-MPJPE) action-wise average: 31.8 mm
+Protocol #3 (N-MPJPE) action-wise average: 40.7 mm
+Velocity      (MPJVE) action-wise average: 3.77 mm
+Namespace(actions='*', architecture='3,3,3', batch_size=1024, bone_length_term=True, by_subject=False, causal=False, channels=1024, checkpoint='checkpoint', checkpoint_frequency=10, choice='WalkTogether', data_augmentation=True, dataset='h36m', dense=False, disable_optimizations=False, downsample=1, dropout=0.25, epochs=15, evaluate='', export_training_curves=False, keypoints='cpn_ft_h36m_dbb', learning_rate=0.001, linear_projection=False, lr_decay=0.95, no_eval=False, no_proj=False, render=False, resume='', stride=1, subjects_test='S9,S11', subjects_train='S1,S5,S6,S7,S8', subjects_unlabeled='', subset=1, test_time_augmentation=True, viz_action=None, viz_bitrate=3000, viz_camera=0, viz_downsample=1, viz_export=None, viz_limit=-1, viz_no_ground_truth=False, viz_output=None, viz_size=5, viz_skip=0, viz_subject=None, viz_video=None, warmup=1)
+Loading dataset...
+Preparing data...
+Loading 2D detections...
+INFO: Receptive field: 27 frames
+INFO: Trainable parameter count: 8555571
+INFO: Testing on 26164 frames
+INFO: Training on 87332 frames
+** Note: reported losses are averaged over all frames and test-time augmentation is not used here.
+** The final evaluation will be carried out after the last training epoch.
+[1] time 2.41 lr 0.001000 3d_train 461.668409 3d_eval 113.779141 3d_valid 119.414438
+[2] time 2.45 lr 0.000950 3d_train 165.077760 3d_eval 89.662935 3d_valid 96.733880
+[3] time 3.59 lr 0.000902 3d_train 97.615257 3d_eval 72.924194 3d_valid 81.749455
+[4] time 2.49 lr 0.000857 3d_train 76.819238 3d_eval 61.943083 3d_valid 68.287875
+[5] time 2.37 lr 0.000815 3d_train 65.813951 3d_eval 193.638706 3d_valid 193.316063
+[6] time 2.53 lr 0.000774 3d_train 65.683908 3d_eval 59.578629 3d_valid 69.995169
+[7] time 3.20 lr 0.000735 3d_train 55.551141 3d_eval 54.164903 3d_valid 68.129973
+[8] time 2.43 lr 0.000698 3d_train 51.542625 3d_eval 45.696221 3d_valid 56.089019
+[9] time 2.35 lr 0.000663 3d_train 48.572525 3d_eval 50.982411 3d_valid 66.796976
+[10] time 2.74 lr 0.000630 3d_train 44.928037 3d_eval 43.465664 3d_valid 60.136580
+Saving checkpoint to checkpoint/epoch_10.bin
+[11] time 2.96 lr 0.000599 3d_train 42.614511 3d_eval 39.985923 3d_valid 56.759583
+[12] time 2.43 lr 0.000569 3d_train 42.123765 3d_eval 41.216974 3d_valid 60.347863
+[13] time 2.45 lr 0.000540 3d_train 40.871395 3d_eval 36.330508 3d_valid 52.677308
+[14] time 2.87 lr 0.000513 3d_train 39.460177 3d_eval 36.457024 3d_valid 54.033005
+[15] time 2.85 lr 0.000488 3d_train 38.039188 3d_eval 39.559997 3d_valid 58.767735
+Evaluating...
+----WalkTogether----
+Test time augmentation: True
+Protocol #1 Error (MPJPE): 56.145928541397424 mm
+Protocol #2 Error (P-MPJPE): 35.86774485727079 mm
+Protocol #3 Error (N-MPJPE): 44.08992140613265 mm
+Velocity Error (MPJVE): 3.491885060762129 mm
+----------
+Protocol #1   (MPJPE) action-wise average: 56.1 mm
+Protocol #2 (P-MPJPE) action-wise average: 35.9 mm
+Protocol #3 (N-MPJPE) action-wise average: 44.1 mm
+Velocity      (MPJVE) action-wise average: 3.49 mm
 
-<< output from stderr >>
-/gpfsdata/home/zeduoyu/anaconda3/lib/python3.8/site-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 10010). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at  /opt/conda/conda-bld/pytorch_1623448234945/work/c10/cuda/CUDAFunctions.cpp:115.)
-  return torch._C._cuda_getDeviceCount() > 0
-/gpfsdata/home/zeduoyu/anaconda3/lib/python3.8/site-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 10010). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at  /opt/conda/conda-bld/pytorch_1623448234945/work/c10/cuda/CUDAFunctions.cpp:115.)
-  return torch._C._cuda_getDeviceCount() > 0
-/gpfsdata/home/zeduoyu/anaconda3/lib/python3.8/site-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 10010). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at  /opt/conda/conda-bld/pytorch_1623448234945/work/c10/cuda/CUDAFunctions.cpp:115.)
-  return torch._C._cuda_getDeviceCount() > 0
-/gpfsdata/home/zeduoyu/anaconda3/lib/python3.8/site-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 10010). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at  /opt/conda/conda-bld/pytorch_1623448234945/work/c10/cuda/CUDAFunctions.cpp:115.)
-  return torch._C._cuda_getDeviceCount() > 0
-/gpfsdata/home/zeduoyu/anaconda3/lib/python3.8/site-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 10010). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at  /opt/conda/conda-bld/pytorch_1623448234945/work/c10/cuda/CUDAFunctions.cpp:115.)
-  return torch._C._cuda_getDeviceCount() > 0
-/gpfsdata/home/zeduoyu/anaconda3/lib/python3.8/site-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 10010). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at  /opt/conda/conda-bld/pytorch_1623448234945/work/c10/cuda/CUDAFunctions.cpp:115.)
-  return torch._C._cuda_getDeviceCount() > 0
-/gpfsdata/home/zeduoyu/anaconda3/lib/python3.8/site-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 10010). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at  /opt/conda/conda-bld/pytorch_1623448234945/work/c10/cuda/CUDAFunctions.cpp:115.)
-  return torch._C._cuda_getDeviceCount() > 0
-/gpfsdata/home/zeduoyu/anaconda3/lib/python3.8/site-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 10010). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at  /opt/conda/conda-bld/pytorch_1623448234945/work/c10/cuda/CUDAFunctions.cpp:115.)
-  return torch._C._cuda_getDeviceCount() > 0
-/gpfsdata/home/zeduoyu/anaconda3/lib/python3.8/site-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 10010). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at  /opt/conda/conda-bld/pytorch_1623448234945/work/c10/cuda/CUDAFunctions.cpp:115.)
-  return torch._C._cuda_getDeviceCount() > 0
+
+PS:
+
+Read file <./Temp/%j.err> for stderr output of this job.
+
