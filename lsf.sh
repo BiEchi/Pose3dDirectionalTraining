@@ -20,21 +20,10 @@ python run.py -e 80 -k cpn_ft_h36m_dbb -arc 3,3,3,3,3 -cho all
 # python ./prepare_data_h36m.py --from-source-cdf ../../dataset
 
 # if you want to estimate our model using the raw data:
-# python run.py.new -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho Directions
-# python run.py.new -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho Discussion
-# python run.py.new -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho Eating
-# python run.py.new -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho Greeting
-# python run.py.new -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho Phoning
-# python run.py.new -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho Photo
-# python run.py.new -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho Posing
-# python run.py.new -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho Purchases
-# python run.py.new -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho Sitting
-# python run.py.new -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho SittingDown
-# python run.py.new -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho Smoking
-# python run.py.new -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho Waiting
-# python run.py.new -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho WalkDog
-# python run.py.new -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho Walking
-# python run.py.new -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho WalkTogether
+# for i in Directions Discussion Eating Greeting Phoning Photo Posing Purchases Sitting SittingDown Smoking Waiting WalkDog Walking WalkTogether ;
+# do
+#     python run.py -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho $i ;
+# done
 
 
 # if you want to estimate the original model using the best-performance parameter:
