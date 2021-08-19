@@ -61,20 +61,113 @@
   title   = {Deep image homography estimation},
   year    = {2016},
 }
-
-@Article{,
-}
 @inproceedings{wang2013action,
   title={Action recognition with improved trajectories},
   author={Wang, Heng and Schmid, Cordelia},
   booktitle={Proceedings of the IEEE international conference on computer vision},
   pages={3551--3558},
   year={2013}
-}@inproceedings{wang2013action,
-  title={Action recognition with improved trajectories},
-  author={Wang, Heng and Schmid, Cordelia},
+}
+
+@InProceedings{luvizon20182d,
+  author    = {Luvizon, Diogo C and Picard, David and Tabia, Hedi},
+  booktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+  title     = {2d/3d pose estimation and action recognition using multitask deep learning},
+  year      = {2018},
+  pages     = {5137--5146},
+}
+
+@InProceedings{iqbal2017pose,
+  author       = {Iqbal, Umar and Garbade, Martin and Gall, Juergen},
+  booktitle    = {2017 12th IEEE International Conference on Automatic Face \& Gesture Recognition (FG 2017)},
+  title        = {Pose for action-action for pose},
+  year         = {2017},
+  organization = {IEEE},
+  pages        = {438--445},
+}
+@inproceedings{jhuang2013towards,
+  title={Towards understanding action recognition},
+  author={Jhuang, Hueihan and Gall, Juergen and Zuffi, Silvia and Schmid, Cordelia and Black, Michael J},
   booktitle={Proceedings of the IEEE international conference on computer vision},
-  pages={3551--3558},
+  pages={3192--3199},
   year={2013}
+}
+@InProceedings{andriluka2018posetrack,
+  author    = {Andriluka, Mykhaylo and Iqbal, Umar and Insafutdinov, Eldar and Pishchulin, Leonid and Milan, Anton and Gall, Juergen and Schiele, Bernt},
+  booktitle = {Proceedings of the IEEE conference on computer vision and pattern recognition},
+  title     = {Posetrack: A benchmark for human pose estimation and tracking},
+  year      = {2018},
+  pages     = {5167--5176},
+}
+@inproceedings{gall20102d,
+  title={2d action recognition serves 3d human pose estimation},
+  author={Gall, Juergen and Yao, Angela and Van Gool, Luc},
+  booktitle={European Conference on Computer Vision},
+  pages={425--438},
+  year={2010},
+  organization={Springer}
+}
+@InProceedings{yao2011does,
+  author       = {Yao, Angela and Gall, Juergen and Fanelli, Gabriele and Van Gool, Luc},
+  booktitle    = {Proceedings of the 22nd British machine vision conference-BMVC 2011},
+  title        = {Does human action recognition benefit from pose estimation?''},
+  year         = {2011},
+  organization = {BMV press},
+}
+
+@InProceedings{toshev2014deeppose,
+  author    = {Toshev, Alexander and Szegedy, Christian},
+  booktitle = {Proceedings of the IEEE conference on computer vision and pattern recognition},
+  title     = {Deeppose: Human pose estimation via deep neural networks},
+  year      = {2014},
+  pages     = {1653--1660},
+}
+
+@InProceedings{li2015maximum,
+  author    = {Li, Sijin and Zhang, Weichen and Chan, Antoni B},
+  booktitle = {Proceedings of the IEEE international conference on computer vision},
+  title     = {Maximum-margin structured learning with deep networks for 3d human pose estimation},
+  year      = {2015},
+  pages     = {2848--2856},
+}
+@inproceedings{oberweger2015training,
+  title={Training a feedback loop for hand pose estimation},
+  author={Oberweger, Markus and Wohlhart, Paul and Lepetit, Vincent},
+  booktitle={Proceedings of the IEEE international conference on computer vision},
+  pages={3316--3324},
+  year={2015}
+}@article{ionescu2013human3,
+  title={Human3. 6m: Large scale datasets and predictive methods for 3d human sensing in natural environments},
+  author={Ionescu, Catalin and Papava, Dragos and Olaru, Vlad and Sminchisescu, Cristian},
+  journal={IEEE transactions on pattern analysis and machine intelligence},
+  volume={36},
+  number={7},
+  pages={1325--1339},
+  year={2013},
+  publisher={IEEE}
+}@article{sigal2010humaneva,
+  title={Humaneva: Synchronized video and motion capture dataset and baseline algorithm for evaluation of articulated human motion},
+  author={Sigal, Leonid and Balan, Alexandru O and Black, Michael J},
+  journal={International journal of computer vision},
+  volume={87},
+  number={1-2},
+  pages={4},
+  year={2010},
+  publisher={Springer}
+}@article{miao2019st,
+  title={ST-CNN: Spatial-Temporal Convolutional Neural Network for crowd counting in videos},
+  author={Miao, Yunqi and Han, Jungong and Gao, Yongsheng and Zhang, Baochang},
+  journal={Pattern Recognition Letters},
+  volume={125},
+  pages={113--118},
+  year={2019},
+  publisher={Elsevier}
+}@inproceedings{xu2015learning,
+  title={Learning temporal features using LSTM-CNN architecture for face anti-spoofing},
+  author={Xu, Zhenqi and Li, Shan and Deng, Weihong},
+  booktitle={2015 3rd IAPR Asian Conference on Pattern Recognition (ACPR)},
+  pages={141--145},
+  year={2015},
+  organization={IEEE}
 }
 @Comment{jabref-meta: databaseType:bibtex;}

@@ -9,6 +9,10 @@
 \usepackage{amssymb}
 \usepackage{float}
 \usepackage[ruled,linesnumbered]{algorithm2e}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{caption}
 
 \graphicspath{ {./graphs/} }
 
@@ -17,7 +21,8 @@
 % If you comment hyperref and then uncomment it, you should delete
 % egpaper.aux before re-running latex.  (Or just hit 'q' on the first latex
 % run, let it finish, and you should be clear).
-\usepackage[breaklinks=true,bookmarks=false]{hyperref}
+\usepackage[colorlinks=true, citecolor=blue]{hyperref}
+
 
 \cvprfinalcopy % *** Uncomment this line for the final submission
 
@@ -30,7 +35,7 @@
 \begin{document}
 
 %%%%%%%%% TITLE
-\title{An Action-based Training Method For \textit{VideoPose3D}}
+\title{An Pose Estimation Training Method For \textit{VideoPose3D} with Action Recognition}
 
 \author{Hao Bai\\
 ZJU-UIUC Institute\\
@@ -53,12 +58,14 @@ Haining, Jiaxing\\
 
 %%%%%%%%% ABSTRACT
 \begin{abstract}
-   In this essay we perform a homogenized action-based training method based on \textit{VideoPose3D}.
-   The original paper utilizes a semi-supervised approach on different kinds of subjects
-   and different actions in the network, and we select each action as the only input of
-   the training dataset, and estimate the error for the corresponding action. Evidence has
-   shown that under a limited amount of epochs and datasets, our approach outperforms the original 
-   research. This gives rise to the application for Burst Performance Instances.
+	Action recognition and pose estimation from video are closely related tasks for understanding
+	human motions, but the work to utilize both is rare in literature. In this essay I show an 
+	action-recognition-based training method for \textit{VideoPose3D}, which contributes to the 
+	precision of velocity error and speed of training. The model is fed with videos which have exactly 
+	the same type of action in the estimation period, and it only requires a small amount of data. 
+	Evidence has shown that under a limited amount of epochs and data, our approach outperforms 
+	the original research. The code of this project, is available under the open-source MIT License at
+	\url{https://github.com/BiEchi/Pose3dDirectionalTraining}. 
    
 
 \end{abstract}
@@ -67,29 +74,137 @@ Haining, Jiaxing\\
 \section{Introduction}
 
 Vision-based human motion analysis attempts to understand the movements of the human body 
-using computer vision and machine learning techniques. Our work focuses on the improvement 
-of 3D human pose estimation in video. The original \textit{VideoPose3D} model carries out the 
-result shown in Figure 1, and our model changes the idea with Figure 2.
+using computer vision and machine learning techniques. Technically speaking, the main goal
+for pose estimation and motion analysis is to rebuild the movements of the locations for 
+human body joints inside videos. Qualitative speaking, lower estimation error means better 
+performance.
 
+
+The effect between pose estimation and action recognition is mutual. Pose estimation
+and action recognition can utilize the same dataset \cite{jhuang2013towards, andriluka2018posetrack}
+Pose estimation can be used for action recognition, with the conclusion that a lower
+estimation error leads to a more accurate classification of action recognition \cite{yao2011does}. 
+Turning around, action priors and also be used to ameliorate the precision of pose estimation 
+\cite{yao2012coupled, iqbal2017pose, gall20102d}. There have also been work combining these two tasks 
+together and perform better in each field \cite{7298734, luvizon20182d}.
+
+
+In the field of 3D post estimation by deep learning approach, there are many successful creatures 
+with various types of training methods, like Maximum-Margin Structured training by Li et al. 
+\cite{li2015maximum}, Feedback Loop training by Oberweger et al.\cite{oberweger2015training}, and 
+also Semi-Supervised training by Pavllo et al. \cite{pavllo20193d}, which we mainly concern with 
+in our work.
+
+\textit{VideoPose3D} has been very successful because of its high performance and SOTA precision.
+This work utilizes the datasets \textbf{HumanEva} \cite{sigal2010humaneva} and \textbf{Human3.6M} 
+\cite{ionescu2013human3}. \textbf{Human3.6M} has 11 subjects and 4 viewpoints in total, and 15 types of actions.
+We've got our motivation that, \textit{VideoPose3D} takes a variety of (instead of a certain type of) actions 
+as training data, but there have been lots of successful cases when using action recognition for pose estimations 
+works well for improving its performance, which gives rise to our project.
+
+%------------------------------------------------------------------------
+\section{Related Works and Our Contributions}
+
+As mentioned in the Introduction part, our work is based on the previous work \textit{VideoPose3D} 
+\cite{pavllo20193d} and gets its motivation from successful cases to utilize action recognition for 
+pose estimation \cite{yao2012coupled, iqbal2017pose, gall20102d}. In this part we illustrate how
+these works model and how we can utilize them to perform a better work based on them.
+
+%-------------------------------------------------------------------------
+\subsection{VideoPose3D}
+
+\textit{VideoPose3D} was the state-of-the-art approach which "utilizes a fully convolutional model based on dilated 
+temporal convolutions over 2D keypoints" \cite{pavllo20193d}. In early researches the main solution was to use recurrent 
+neural networks (RNN) \cite{lee2018propagating}, but the research \textit{VideoPose3D} utilized the convolutional 
+neuron network (CNN) to gain an efficient result on the dataset \textit{Human3.6M}, with the inspiration that
+many authors had mentioned CNN in temporal models.
+
+Technically speaking, \textit{VideoPose3D} takes a series of images as the input of the training network to imitate the
+functionality as RNN (Figure \ref{CNN_in_VideoPose3D}). This ideology has been widely accepted in the current academy and there have been lots of successful
+cases utilizing this method, e.g. the Spatial-Temporal-CNN used for crowd counting in videos \cite{miao2019st}, and LSTM-CNN
+used for face anti-spoofing \cite{xu2015learning}. From these researches we see the capability of CNN. However, CNN is not a natural temporal
+network itself, which means it bears a trait of parallelism and lack of temporal memory \cite{shin2016deep}.
 
 \begin{figure}[H]
 	\begin{center}
 		%\fbox{\rule{0pt}{2in} \rule{0.9\linewidth}{0pt}}
-  		\includegraphics[width=0.9\linewidth]{model.png}
+  		\includegraphics[width=1.0\linewidth]{CNN_in_VideoPose3D.png}
 	\end{center}
-   	\caption{The original model for \textit{VideoPose3D}}
+   	\caption{The temporal convilutional model from \textit{VideoPose3D} takes 2D keypoint sequences (bottom) as input and 
+   			 generates 3D pose estimation as out (top).}
+	\label{CNN_in_VideoPose3D}
+\end{figure}
+
+
+The overall model of \textit{VideoPose3D} is a semi-supervised learning method (Figure 1). 
+
+\begin{figure}[H]
+	\begin{center}
+		%\fbox{\rule{0pt}{2in} \rule{0.9\linewidth}{0pt}}
+  		\includegraphics[width=0.9\linewidth]{original.png}
+	\end{center}
+   	\caption{The overall model of \textit{VideoPose3D}}
 	\label{fig:long}
 	\label{fig:onecol}
 \end{figure}
 
 %-------------------------------------------------------------------------
-\subsection{Action-based Learning}
+\subsection{Action Recognition}
+
+The idea of homogenized learning was proposed firstly by Action Estimations \cite{wang2013action}. 
+Hitherto, there have been a variety of researches focusing on the combination of action recognition and pose
+estimation \cite{yao2012coupled}. The basic idea is to begin with 2D appearance-based action recognition
+based on low-level appearance features. Outputs of the 2D action recognition are used as a prior distribution
+for the particle-based optimization for 3D pose estimation. Finally, 3D pose-based action recognition is then 
+performed based on pose features extracted from the estimated poses.
+
+\begin{figure}[H]
+	\begin{center}
+		%\fbox{\rule{0pt}{2in} \rule{0.9\linewidth}{0pt}}
+  		\includegraphics[width=0.9\linewidth]{action_and_pose.png}
+	\end{center}
+   	\caption{The coupled action recognition and pose estimation framework forwarded by \cite{yao2012coupled}.}
+	\label{fig:long}
+	\label{fig:onecol}
+\end{figure}
+
+
+%-------------------------------------------------------------------------
+\subsection{Homography Estimation}
+
+The idea of using homonegeious actions in a dataset was also inspired from Homography Estimation
+in some deep images \cite{detone2016deep}.
+
+
+
+%------------------------------------------------------------------------
+\section{Representation and Modeling}
+ 
+The detailed experimental setup can also be explored in \textit{README.md} in the github repo. To reproduce
+the results, you need to test for 15 times for each type of action, and it's preferable to test for multiple
+times. It's more convenient to use \textit{bash} scripts to save time.
+
+
+Our work focuses on using certain types of actions for training data. For example, say there are 4 actions for all
+subjects, i.e. sitting, walking, discussing, and posing. The original \textit{VideoPose3D} model takes all 4 types
+of data as training data (Figure 1, left), and they estimate results for all action in the end. Our model, instead, takes 
+only one action as training data (Figure 1, right), and we estimate ONLY result for this certain action in the end. Absolutely, this
+process will iterate through all actions if all of them need to be estimated.
+
+\begin{figure*}
+\centering
+\includegraphics[width=8cm]{model.png}
+\includegraphics[width=8cm]{new_model.png}
+\caption{The comparison of the original model (left) and our model (right). The original model takes all types of actions for 
+		 training, but we only take a certain type of data as training data, as an approach to utilize action recognition for pose estimation.}
+\label{fig:long}
+\end{figure*}
 
 Compared to the original model we utilized a different data-processing approach. The original approach
 mentioned in \textit{VideoPose3D} uses all actions in training data, and the estimating effect was good
 overall. We utilize the method that we only take one type of action for training, and the total amount 
 for training should be the same. Mathematically, take the action \textit{Sitting} for example, it can 
-be expressed as
+be expressed as*
 
 \begin{equation}
 	\sum_{i\in actions}{f(i)} = f(Sitting)\cdot t
@@ -110,21 +225,6 @@ the results in the same time, the evidence can be illustrated by formula (1). Af
 that our work outperforms the original work by 11\%.
 
 The principle of our work is shown below.
-
-
-\begin{figure}[H]
-	\begin{center}
-		%\fbox{\rule{0pt}{2in} \rule{0.9\linewidth}{0pt}}
-  		\includegraphics[width=0.9\linewidth]{new_model.png}
-	\end{center}
-   	\caption{The action-based, multi-epoch training method for \textit{VideoPose3D} (our work)}
-	\label{fig:long}
-	\label{fig:onecol}
-\end{figure}
-
-
-
-\subsection{Iterative Training}
 
 In our model we also changed the process of training in the original research. In the original research,
 it takes 15 unit-epochs to run a single epoch, because there are 15 types of actions. In our work, we can
@@ -168,66 +268,10 @@ available (we take 2 epochs for example).
 \end{algorithm}
 
 
-%------------------------------------------------------------------------
-\section{Related Work}
-
-Our work is based on the previous work \textit{VideoPose3D} with an inspiration for its
-semi-supervised approach. Earlier work has shown the effect of semi-supervised learning
-as a great way for improving training performance \cite{zhu2009introduction}. 
-
-%-------------------------------------------------------------------------
-\subsection{VideoPose3D}
-
-
-\textit{VideoPose3D} is the current state-of-the-art approach which utilizes a fully 
-convolutional model based on dilated temporal convolutions over 2D keypoints. 
-\cite{pavlakos2017coarse,pavllo20193d}. In early researches the main solution
-was to use recurrent neural networks (RNN) \cite{lee2018propagating}, but the research
-group of \textit{VideoPose3D} utilized the convolutional neuron network (CNN) to gain
-an efficient result on the dataset \textit{Human3.6M}, with the inspiration that
-many authors had mentioned CNN in temporal models. Some researches has also shown the 
-idea of using a spacial-temporal model being useful \cite{7298734}, but that's not utilized in our 
-research.
-
-\begin{figure}[H]
-	\begin{center}
-		%\fbox{\rule{0pt}{2in} \rule{0.9\linewidth}{0pt}}
-  		\includegraphics[width=0.9\linewidth]{original.png}
-	\end{center}
-   	\caption{The overall model of \textit{VideoPose3D}}
-	\label{fig:long}
-	\label{fig:onecol}
-\end{figure}
-
-%-------------------------------------------------------------------------
-\subsection{Action-based Learning}
-
-The idea of homogenized learning was proposed firstly by Action Estimations \cite{yao2012coupled,wang2013action}.
-
-
-
-%-------------------------------------------------------------------------
-\subsection{Homography Estimation}
-
-The idea of using homonegeious actions in a dataset was also inspired from Homography Estimation
-in some deep images \cite{detone2016deep}. 
-
-
-
-%------------------------------------------------------------------------
-\section{Experimental Setup}
-
-For the code of this project, please refer to the url below.
-
-\url{https://github.com/BiEchi/Pose3dDirectionalTraining}. 
- 
-The detailed experimental setup can also be explored in \textit{README.md} in the github repo. To reproduce
-the results, you need to test for 15 times for each type of action, and it's preferable to test for multiple
-times. It's more convenient to use \textit{bash} scripts to save time.
 
 %------------------------------------------------------------------------
 
-\section{Results}
+\section{Experiments}
 
 Shown below are the results of the experiment. Expect a minor error when testing on your own. Note that all
 unit are millimeter.
@@ -235,79 +279,75 @@ unit are millimeter.
 \subsection{Small Number of Epochs}
 
 In this part we estimate the errors with a small amount of time. The epoch of the original test was set to 
-be 1 unit epoch, and the epoch of the action-based test was set to 15 epochs.
+be 1 unit epoch, and the epoch of the action-based test was set to 15 epochs. In the table below (Table 1 &
+Table 2), we illustrate the pose estimation results with respect to different types of model (i.e. VideoPose3D as 
+\textbf{VP3D} and our model \textbf{Ours}) with different
+training arguments (i.e. the number of receptive field Frames \textbf{F}, the number of Unit Epochs \textbf{UE}),
+15 different actions, and two different protocols (i.e. MPJPE and Velocity Error of MPJPE).
 
-\begin{table}[H]
-\caption{MPJPE, 3*3, unit-epoch}
 
 \begin{center}
-
-\begin{tabular}{cccc}
+\begin{table*}
+\normalsize
+%\begin{tabular}{l | p{0.4cm} p{0.4cm} p{0.3cm} p{0.5cm}p{0.6cm}p{0.5cm}p{0.3cm}p{0.4cm}p{0.1cm}p{0.4cm}p{0.7cm}p{0.4cm}p{0.8cm}p{0.4cm}p{0.8cm} p{0.3cm} } 
+\setlength\tabcolsep{2.5pt}
+\begin{tabular}{l|rrrrrrrrrrrrrrrr} 
+ & Dir. & Disc. & Eat & Greet & Phone & Photo & Pose & Purch. & Sit & SitD. & Smoke & Wait & WkD. & Walk & WkT. & \textbf{Avg} \\
+\hline
+VP3D, 1F, 15 UE  & 67.0 & 65.8 &   \\
+VP3D, 27F, 15 UE & 54.5 & 61.4 & 56.3 & 58.6 & 61.3 & 68.6 & 57.6 & 60.6 & 70.5 & 84.7 & 60.5 & 59.1 & 68.2 & 51.8 & 53.1 & 61.8 \\
+VP3D, 243F, 1200 UE\\
 
 \hline
-No. & Action & Original & Action-based \\
+
+Ours, 1F, 15 UE &  \\
+Ours, 27F, 15 UE & 70.5 & 71.9 & 52.1 & 61.4 & 69.0 & 82.6 & 70.6 & 82.1 & 70.4 & 79.4 & 60.3 & 79.5 & 56.1 & 44.2 & 56.2 & 67.1\\
+Ours, 243F, 1200 UE\\
+
+ 
 \hline
-
-1&Purchases& 60.55 & 82.09 \\
-2&Posing& 57.60 & 70.59\\
-3&Walking& 51.82 & \textbf{44.22} \\
-4&Sitting& 70.49 & \textbf{70.36} \\
-5&Walkdog& 68.15 & \textbf{56.14} \\
-6&Greeting& 58.62 & 61.38\\
-7&Waiting& 59.07 & 79.48\\
-8&WalkTogether& 53.13 & 56.15\\
-9&Phoning& 61.27 & 68.99 \\
-10&Discussion& 61.36 & 71.88 \\
-11&SittingDown& 84.68 & \textbf{79.43}\\
-12&Eating&  56.34 & \textbf{52.07} \\
-13&Smoking& 60.45 & \textbf{60.25}\\
-14&Directions& 54.51 & 70.50 \\
-15&Photo& 68.57 & 82.64\\
-&\textit{Avg}& \textit{61.8} & \textit{67.08}\\
-
 
 \hline
 \end{tabular}
 
+\caption{Protocol 1, MPJPE Error}
+\end{table*}
 \end{center}
 
-\end{table}
+
+\begin{center}
+\begin{table*}
+\normalsize
+%\begin{tabular}{l | p{0.4cm} p{0.4cm} p{0.3cm} p{0.5cm}p{0.6cm}p{0.5cm}p{0.3cm}p{0.4cm}p{0.1cm}p{0.4cm}p{0.7cm}p{0.4cm}p{0.8cm}p{0.4cm}p{0.8cm} p{0.3cm} } 
+\setlength\tabcolsep{2.5pt}
+\begin{tabular}{l|rrrrrrrrrrrrrrrr} 
+ & Dir. & Disc. & Eat & Greet & Phone & Photo & Pose & Purch. & Sit & SitD. & Smoke & Wait & WkD. & Walk & WkT. & \textbf{Avg} \\
+\hline
+VP3D, 1F, 15 UE &   \\
+VP3D, 27F, 15 UE & 3.84 & 4.02 & 3.14 & 4.42 & 3.31 & 3.58 & \textbf{3.44} & 3.93 & 3.14 & 4.21 & 3.36 & \textbf{3.34} & 4.68 & 4.51 & 4.08 & 3.80 \\
+VP3D, 243F, 1200 UE\\
+
+\hline
+
+Ours, 1F, 15 UE &  \\
+Ours, 27F, 15 UE & \textbf{3.78} & \textbf{4.28} & \textbf{3.01} & \textbf{4.27} & \textbf{3.14} & \textbf{3.50} & 3.79 & \textbf{3.65} & \textbf{2.84} & \textbf{3.90} & \textbf{3.05} & 3.55 & \textbf{4.37} & \textbf{3.77} & \textbf{3.49} & \textbf{3.63}\\
+Ours, 243F, 1200 UE\\
+
+ 
+\hline
+
+\hline
+\end{tabular}
+
+\caption{Protocol 2, MPJPE Velocity Error}
+\end{table*}
+\end{center}
+
+
+
 
 According to the result, we can primarily decide the fact that 
 
-\begin{table}[H]
-\caption{Velocity Error (MPJPE), 3*3, unit-epoch}
-
-\begin{center}
-
-\begin{tabular}{cccc}
-\hline
-No. & Action & Original & Action-based \\
-\hline
-
-1&Purchases& 3.93 & \textbf{3.65} \\
-2&Posing& 3.44 & 3.79 \\
-3&Walking& 4.51 & \textbf{3.77}\\
-4&Sitting& 3.14 & \textbf{2.84} \\
-5&Walkdog& 4.68 & \textbf{4.37} \\
-6&Greeting& 4.42 & \textbf{4.27}\\
-7&Waiting& 3.34 & \textbf{3.55} \\
-8&WalkTogether& 4.08 & \textbf{3.49}\\
-9&Phoning& 3.31 & \textbf{3.14} \\
-10&Discussion& 4.02 & 4.28 \\
-11&SittingDown& 4.21 & \textbf{3.90}\\
-12&Eating& 3.14 & \textbf{3.01} \\
-13&Smoking& 3.36 & \textbf{3.05}\\
-14&Directions& 3.84 & \textbf{3.78}\\
-15&Photo& 3.58 & \textbf{3.50}\\
-&\textit{Avg}& \textit{3.8} & \textit{\textbf{3.63}}\\
-
-\hline
-\end{tabular}
-
-\end{center}
-
-\end{table}
 
 
 \subsection{Large Number of Epochs}
