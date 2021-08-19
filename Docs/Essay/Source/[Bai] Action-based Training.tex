@@ -13,6 +13,7 @@
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{caption}
+\usepackage{subcaption}
 
 \graphicspath{ {./graphs/} }
 
@@ -285,9 +286,7 @@ training arguments (i.e. the number of receptive field Frames \textbf{F}, the nu
 15 different actions, and two different protocols (i.e. MPJPE and Velocity Error of MPJPE).
 
 In the tables the model with the best performance is in bold, and we set the argument as the highest classification standard
-for better comparison. 
-
-In the figures below we visualize the data by different actions.
+for better comparison. The visualized Argument part is labeled in the corresponding letter in figure \ref{fig:four graphs}.
 
 
 \begin{center}
@@ -299,12 +298,13 @@ In the figures below we visualize the data by different actions.
 Arguments & Model & Dir. & Disc. & Eat & Greet & Phone & Photo & Pose & Purch. & Sit & SitD. & Smoke & Wait & WkD. & Walk & WkT. & \textbf{Avg} \\
 
 \hline
-1F, 15UE & VideoPose3D & 67.0 & \textbf{65.8} & 68.7 & 72.5 & \textbf{74.2} & \textbf{87.2} & \textbf{65.5} & \textbf{73.1} & 85.6 & 117 & 73.6 & \textbf{70.8} & 81.1 & 63.5 & 67.3 & 75.5 \\
+1F, 15UE (a) & VideoPose3D & 67.0 & \textbf{65.8} & 68.7 & 72.5 & \textbf{74.2} & \textbf{87.2} & \textbf{65.5} & \textbf{73.1} & 85.6 & 117 & 73.6 & \textbf{70.8} & 81.1 & 63.5 & 67.3 & 75.5 \\
 1F, 15UE & Ours & \textbf{61.9} & 69.2 & \textbf{62.0} & \textbf{68.4} & 75.7 & 88.2 & 74.5 & 76.9 & \textbf{81.5} & \textbf{97.9} & \textbf{71.1} & 80.9 & \textbf{80.7} & \textbf{49.9} & \textbf{59.2} & \textbf{73.2}\\
+
 \hline
 
 
-27F, 15 UE & VideoPose3D & \textbf{54.5} & \textbf{61.4} & 56.3 & \textbf{58.6} & \textbf{61.3} & \textbf{68.6} & \textbf{57.6} & \textbf{60.6} & 70.5 & 84.7 & 60.5 & \textbf{59.1} & 68.2 & 51.8 & \textbf{53.1} & \textbf{61.8} \\
+27F, 15 UE (b) & VideoPose3D & \textbf{54.5} & \textbf{61.4} & 56.3 & \textbf{58.6} & \textbf{61.3} & \textbf{68.6} & \textbf{57.6} & \textbf{60.6} & 70.5 & 84.7 & 60.5 & \textbf{59.1} & 68.2 & 51.8 & \textbf{53.1} & \textbf{61.8} \\
 27F, 15 UE & Ours & 70.5 & 71.9 & \textbf{52.1} & 61.4 & 69.0 & 82.6 & 70.6 & 82.1 & \textbf{70.4} & \textbf{79.4} & \textbf{60.3} & 79.5 & \textbf{56.1} & \textbf{44.2} & 56.2 & 67.1\\
 \hline
 
@@ -331,10 +331,10 @@ Arguments & Model & Dir. & Disc. & Eat & Greet & Phone & Photo & Pose & Purch. &
 \begin{tabular}{l|l|rrrrrrrrrrrrrrrr} 
 Arguments & Model & Dir. & Disc. & Eat & Greet & Phone & Photo & Pose & Purch. & Sit & SitD. & Smoke & Wait & WkD. & Walk & WkT. & \textbf{Avg} \\
 \hline
-1F, 15 UE & VideoPose3D & \textbf{10.7} & \textbf{12.2} & 10.2 & 12.4 & 11.1 & \textbf{11.0} & 10.5 & 12.3 & \textbf{11.4} & \textbf{13.8} & 11.0 & \textbf{10.6} & 12.7 & 12.9 & 12.4 & 11.7  \\
+1F, 15 UE (c) & VideoPose3D & \textbf{10.7} & \textbf{12.2} & 10.2 & 12.4 & 11.1 & \textbf{11.0} & 10.5 & 12.3 & \textbf{11.4} & \textbf{13.8} & 11.0 & \textbf{10.6} & 12.7 & 12.9 & 12.4 & 11.7  \\
 1F, 15 UE & Ours & 10.9 & 13.0 & \textbf{9.59} & \textbf{11.8} & \textbf{10.3} & 11.4 & \textbf{10.1} & \textbf{10.5} & 12.2 & 14.6 & \textbf{10.9} & 11.5 & \textbf{12.5} & \textbf{12.6} & \textbf{12.2} & \textbf{11.6} \\
 \hline
-27F, 15 UE & VideoPose3D & 3.84 & 4.02 & 3.14 & 4.42 & 3.31 & 3.58 & \textbf{3.44} & 3.93 & 3.14 & 4.21 & 3.36 & \textbf{3.34} & 4.68 & 4.51 & 4.08 & 3.80 \\
+27F, 15 UE (d) & VideoPose3D & 3.84 & 4.02 & 3.14 & 4.42 & 3.31 & 3.58 & \textbf{3.44} & 3.93 & 3.14 & 4.21 & 3.36 & \textbf{3.34} & 4.68 & 4.51 & 4.08 & 3.80 \\
 27F, 15 UE & Ours & \textbf{3.78} & \textbf{4.28} & \textbf{3.01} & \textbf{4.27} & \textbf{3.14} & \textbf{3.50} & 3.79 & \textbf{3.65} & \textbf{2.84} & \textbf{3.90} & \textbf{3.05} & 3.55 & \textbf{4.37} & \textbf{3.77} & \textbf{3.49} & \textbf{3.63}\\
 \hline
 
@@ -350,6 +350,42 @@ Arguments & Model & Dir. & Disc. & Eat & Greet & Phone & Photo & Pose & Purch. &
 \caption{Protocol 2, MPJPE Velocity Error}
 \end{table*}
 \end{center}
+
+
+
+\begin{figure*}
+     \centering
+     \begin{subfigure}[b]{0.49\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{mean_error_comparison.png}
+         \caption{1F, 15UE, MPJPE}
+         \label{fig:est_a}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.49\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{mean_error_comparison_2.png}
+         \caption{27F, 15UE, MPJPE}
+         \label{fig:est_b}
+     \end{subfigure}
+     \quad
+     \begin{subfigure}[b]{0.49\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{mean_error_comparison_3.png}
+         \caption{1F, 15UE, Velocity Error of MPJPE}
+         \label{fig:est_c}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.49\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{mean_error_comparison_4.png}
+         \caption{\textbf{27F, 15UE, Velocity Error of MPJPE}}
+         \label{fig:est_d}
+     \end{subfigure}
+     \hfill
+        \caption{Four simple graphs}
+        \label{fig:four graphs}
+\end{figure*}
 
 
 \subsection{Large Number of Epochs}
@@ -407,26 +443,25 @@ Epochs & Epoch Units & Original & Eating-based\\
 Transforming data into more readable format we gain the graph below.
 
 \begin{figure*}
-	\begin{center}
-		%\fbox{\rule{0pt}{2in} \rule{0.9\linewidth}{0pt}}
-  		\includegraphics[width=0.9\linewidth]{MPJPE_epoch_overall.png}
-	\end{center}
-   	\caption{Relationship between MPJPE and epoch (original)}
-	\label{fig:long}
-	\label{fig:onecol}
+     \centering
+     \begin{subfigure}[b]{0.99\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{MPJPE_epoch_overall.png}
+         \caption{Relationship between MPJPE and epoch (original)}
+         \label{fig:est_a}
+     \end{subfigure}
+     \hfill
+     \quad
+     \begin{subfigure}[b]{0.99\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{MPJPE_epoch_zoomed.png}
+         \caption{Relationship between MPJPE and epoch (Zoomed)}
+         \label{fig:est_b}
+     \end{subfigure}
+        \caption{Four simple graphs}
+        \label{fig:four graphs}
 \end{figure*}
 
-
-
-\begin{figure*}
-	\begin{center}
-		%\fbox{\rule{0pt}{2in} \rule{0.9\linewidth}{0pt}}
-  		\includegraphics[width=0.9\linewidth]{MPJPE_epoch_zoomed.png}
-	\end{center}
-   	\caption{Relationship between MPJPE and epoch (Zoomed)}
-	\label{fig:long}
-	\label{fig:onecol}
-\end{figure*}
 
 \section{Conclusion}
 According to the results shown above, we conclude that the action-based model has a better performance on small epochs because 
