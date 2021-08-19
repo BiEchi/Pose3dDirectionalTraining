@@ -279,33 +279,41 @@ unit are millimeter.
 \subsection{Small Number of Epochs}
 
 In this part we estimate the errors with a small amount of time. The epoch of the original test was set to 
-be 1 unit epoch, and the epoch of the action-based test was set to 15 epochs. In the table below (Table 1 &
-Table 2), we illustrate the pose estimation results with respect to different types of model (i.e. VideoPose3D as 
-\textbf{VP3D} and our model \textbf{Ours}) with different
+be 1 unit epoch, and the epoch of the action-based test was set to 15 epochs. In the table below (Table 1 \&
+Table 2), we illustrate the pose estimation results with respect to different types of model with different
 training arguments (i.e. the number of receptive field Frames \textbf{F}, the number of Unit Epochs \textbf{UE}),
 15 different actions, and two different protocols (i.e. MPJPE and Velocity Error of MPJPE).
+
+In the tables the model with the best performance is in bold, and we set the argument as the highest classification standard
+for better comparison. 
+
+In the figures below we visualize the data by different actions.
 
 
 \begin{center}
 \begin{table*}
-\normalsize
-%\begin{tabular}{l | p{0.4cm} p{0.4cm} p{0.3cm} p{0.5cm}p{0.6cm}p{0.5cm}p{0.3cm}p{0.4cm}p{0.1cm}p{0.4cm}p{0.7cm}p{0.4cm}p{0.8cm}p{0.4cm}p{0.8cm} p{0.3cm} } 
-\setlength\tabcolsep{2.5pt}
-\begin{tabular}{l|rrrrrrrrrrrrrrrr} 
- & Dir. & Disc. & Eat & Greet & Phone & Photo & Pose & Purch. & Sit & SitD. & Smoke & Wait & WkD. & Walk & WkT. & \textbf{Avg} \\
-\hline
-VP3D, 1F, 15 UE  & 67.0 & 65.8 &   \\
-VP3D, 27F, 15 UE & 54.5 & 61.4 & 56.3 & 58.6 & 61.3 & 68.6 & 57.6 & 60.6 & 70.5 & 84.7 & 60.5 & 59.1 & 68.2 & 51.8 & 53.1 & 61.8 \\
-VP3D, 243F, 1200 UE\\
+\small
+%\begin{tabular}{cl | p{0.4cm} p{0.4cm} p{0.3cm} p{0.5cm}p{0.6cm}p{0.5cm}p{0.3cm}p{0.4cm}p{0.1cm}p{0.4cm}p{0.7cm}p{0.4cm}p{0.8cm}p{0.4cm}p{0.8cm} p{0.3cm} } 
+\setlength\tabcolsep{2.3pt}
+\begin{tabular}{l|l|rrrrrrrrrrrrrrrr}
+Arguments & Model & Dir. & Disc. & Eat & Greet & Phone & Photo & Pose & Purch. & Sit & SitD. & Smoke & Wait & WkD. & Walk & WkT. & \textbf{Avg} \\
 
 \hline
+1F, 15UE & VideoPose3D & 67.0 & \textbf{65.8} & 68.7 & 72.5 & \textbf{74.2} & \textbf{87.2} & \textbf{65.5} & \textbf{73.1} & 85.6 & 117 & 73.6 & \textbf{70.8} & 81.1 & 63.5 & 67.3 & 75.5 \\
+1F, 15UE & Ours & \textbf{61.9} & 69.2 & \textbf{62.0} & \textbf{68.4} & 75.7 & 88.2 & 74.5 & 76.9 & \textbf{81.5} & \textbf{97.9} & \textbf{71.1} & 80.9 & \textbf{80.7} & \textbf{49.9} & \textbf{59.2} & \textbf{73.2}\\
+\hline
 
-Ours, 1F, 15 UE &  \\
-Ours, 27F, 15 UE & 70.5 & 71.9 & 52.1 & 61.4 & 69.0 & 82.6 & 70.6 & 82.1 & 70.4 & 79.4 & 60.3 & 79.5 & 56.1 & 44.2 & 56.2 & 67.1\\
-Ours, 243F, 1200 UE\\
 
+27F, 15 UE & VideoPose3D & \textbf{54.5} & \textbf{61.4} & 56.3 & \textbf{58.6} & \textbf{61.3} & \textbf{68.6} & \textbf{57.6} & \textbf{60.6} & 70.5 & 84.7 & 60.5 & \textbf{59.1} & 68.2 & 51.8 & \textbf{53.1} & \textbf{61.8} \\
+27F, 15 UE & Ours & 70.5 & 71.9 & \textbf{52.1} & 61.4 & 69.0 & 82.6 & 70.6 & 82.1 & \textbf{70.4} & \textbf{79.4} & \textbf{60.3} & 79.5 & \textbf{56.1} & \textbf{44.2} & 56.2 & 67.1\\
+\hline
+
+243F, 1200 UE & Pavlakos \cite{pavlakos2017coarse} & 67.4 & 71.9 & 66.7 & 69.1 & 72.0 & 77.0 & 65.0 & 68.3 & 83.7 & 96.5 & 71.7 & 65.8 & 74.9 & 59.1 & 63.2 & 71.9 \\
+243F, 1200 UE & Luvizon \cite{luvizon20182d} & 49.2 & 51.6 & 47.6 & 50.5 & 51.8 & 60.3 & 48.5 & 51.7 & 61.5 & 70.9 & 53.7 & 48.9 & 57.9 & 44.4 & 48.9 & 53.2\\
+243F, 1200 UE & VideoPose3D\\
+243F, 1200 UE & Ours & & & 49.3\\
  
-\hline
+\hline 
 
 \hline
 \end{tabular}
@@ -317,21 +325,21 @@ Ours, 243F, 1200 UE\\
 
 \begin{center}
 \begin{table*}
-\normalsize
+\small
 %\begin{tabular}{l | p{0.4cm} p{0.4cm} p{0.3cm} p{0.5cm}p{0.6cm}p{0.5cm}p{0.3cm}p{0.4cm}p{0.1cm}p{0.4cm}p{0.7cm}p{0.4cm}p{0.8cm}p{0.4cm}p{0.8cm} p{0.3cm} } 
-\setlength\tabcolsep{2.5pt}
-\begin{tabular}{l|rrrrrrrrrrrrrrrr} 
- & Dir. & Disc. & Eat & Greet & Phone & Photo & Pose & Purch. & Sit & SitD. & Smoke & Wait & WkD. & Walk & WkT. & \textbf{Avg} \\
+\setlength\tabcolsep{2.3pt}
+\begin{tabular}{l|l|rrrrrrrrrrrrrrrr} 
+Arguments & Model & Dir. & Disc. & Eat & Greet & Phone & Photo & Pose & Purch. & Sit & SitD. & Smoke & Wait & WkD. & Walk & WkT. & \textbf{Avg} \\
 \hline
-VP3D, 1F, 15 UE &   \\
-VP3D, 27F, 15 UE & 3.84 & 4.02 & 3.14 & 4.42 & 3.31 & 3.58 & \textbf{3.44} & 3.93 & 3.14 & 4.21 & 3.36 & \textbf{3.34} & 4.68 & 4.51 & 4.08 & 3.80 \\
-VP3D, 243F, 1200 UE\\
-
+1F, 15 UE & VideoPose3D & \textbf{10.7} & \textbf{12.2} & 10.2 & 12.4 & 11.1 & \textbf{11.0} & 10.5 & 12.3 & \textbf{11.4} & \textbf{13.8} & 11.0 & \textbf{10.6} & 12.7 & 12.9 & 12.4 & 11.7  \\
+1F, 15 UE & Ours & 10.9 & 13.0 & \textbf{9.59} & \textbf{11.8} & \textbf{10.3} & 11.4 & \textbf{10.1} & \textbf{10.5} & 12.2 & 14.6 & \textbf{10.9} & 11.5 & \textbf{12.5} & \textbf{12.6} & \textbf{12.2} & \textbf{11.6} \\
+\hline
+27F, 15 UE & VideoPose3D & 3.84 & 4.02 & 3.14 & 4.42 & 3.31 & 3.58 & \textbf{3.44} & 3.93 & 3.14 & 4.21 & 3.36 & \textbf{3.34} & 4.68 & 4.51 & 4.08 & 3.80 \\
+27F, 15 UE & Ours & \textbf{3.78} & \textbf{4.28} & \textbf{3.01} & \textbf{4.27} & \textbf{3.14} & \textbf{3.50} & 3.79 & \textbf{3.65} & \textbf{2.84} & \textbf{3.90} & \textbf{3.05} & 3.55 & \textbf{4.37} & \textbf{3.77} & \textbf{3.49} & \textbf{3.63}\\
 \hline
 
-Ours, 1F, 15 UE &  \\
-Ours, 27F, 15 UE & \textbf{3.78} & \textbf{4.28} & \textbf{3.01} & \textbf{4.27} & \textbf{3.14} & \textbf{3.50} & 3.79 & \textbf{3.65} & \textbf{2.84} & \textbf{3.90} & \textbf{3.05} & 3.55 & \textbf{4.37} & \textbf{3.77} & \textbf{3.49} & \textbf{3.63}\\
-Ours, 243F, 1200 UE\\
+243F, 1200 UE & VideoPose3D & & &  \\
+243F, 1200 UE & Ours & & & 2.56\\
 
  
 \hline
@@ -344,12 +352,6 @@ Ours, 243F, 1200 UE\\
 \end{center}
 
 
-
-
-According to the result, we can primarily decide the fact that 
-
-
-
 \subsection{Large Number of Epochs}
 
 For a large number of data, we observe that because of the characteristics of the model that \textit{VideoPose3D}
@@ -357,7 +359,7 @@ utilizes, the epoch refuses to increase after epoch 60 (i.e. epoch 4 of the orig
 
 
 \begin{table}[H]
-\caption{Property Cluster, 3*3, 80-epoch}
+\caption{Property Cluster, 27F, 1200 UE}
 \centering
 \begin{tabular}{ccc}
 \hline
@@ -404,7 +406,7 @@ Epochs & Epoch Units & Original & Eating-based\\
 
 Transforming data into more readable format we gain the graph below.
 
-\begin{figure}[H]
+\begin{figure*}
 	\begin{center}
 		%\fbox{\rule{0pt}{2in} \rule{0.9\linewidth}{0pt}}
   		\includegraphics[width=0.9\linewidth]{MPJPE_epoch_overall.png}
@@ -412,11 +414,11 @@ Transforming data into more readable format we gain the graph below.
    	\caption{Relationship between MPJPE and epoch (original)}
 	\label{fig:long}
 	\label{fig:onecol}
-\end{figure}
+\end{figure*}
 
 
 
-\begin{figure}[H]
+\begin{figure*}
 	\begin{center}
 		%\fbox{\rule{0pt}{2in} \rule{0.9\linewidth}{0pt}}
   		\includegraphics[width=0.9\linewidth]{MPJPE_epoch_zoomed.png}
@@ -424,7 +426,7 @@ Transforming data into more readable format we gain the graph below.
    	\caption{Relationship between MPJPE and epoch (Zoomed)}
 	\label{fig:long}
 	\label{fig:onecol}
-\end{figure}
+\end{figure*}
 
 \section{Conclusion}
 According to the results shown above, we conclude that the action-based model has a better performance on small epochs because 
