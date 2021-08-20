@@ -353,6 +353,100 @@ Arguments & Model & Dir. & Disc. & Eat & Greet & Phone & Photo & Pose & Purch. &
 \end{table*}
 \end{center}
 
+
+%------------------------------------------------------------------------
+
+
+\begin{table*}
+	\centering
+	\begin{tabular}{ccc}
+	\hline
+	Object & VP3D-Avg & Ours-Avg \\
+	\hline
+	TC (40 E)& 84972 sec. & 28848 sec.\\
+	MPJPE& 50.27 mm & 50.49 mm\\
+	Velocity-M& 2.66 mm & 3.02 mm  \\
+	\hline
+	TC (80 E)& 176976 sec. & 56921 sec.\\
+	MPJPE&  48.22 mm & 50.54 mm\\
+	Velocity-M& 2.49 mm & 3.08 mm  \\
+	\hline
+	MPJPE $\epsilon_0$ & \multicolumn{2}{c}{60.46} \\
+	Velo-M $\epsilon_0$ & \multicolumn{2}{c}{3.408} \\
+	MPJPE TPR & $6.92\cdot 10^{-5}$ & $17.4\cdot 10^{-5}$ \\
+	Velo-M TPR & $5.19\cdot 10^{-6}$ & $5.76\cdot 10^{-6}$ \\
+	\hline
+	\end{tabular}
+	\caption{The property cluster with receptive field = 243 frames and training epochs = 1200 unit epochs.}
+
+	\centering
+	\begin{tabular}{ccccc}
+	\hline
+	Epochs & VP3D-Avg & Ours-Avg & VP3D-Eat & Ours-Eat\\
+	\hline
+	1 & 59.11 & 57.52 & 54.22 & 51.14 \\
+	2 & 56.26 & 52.06 & 52.21 & 48.72 \\
+	3 & 61.73 & 51.28 & 51.17 & 47.14 \\
+	4 & 54.24 & 51.41 & 49.22 & 45.28 \\
+	5 & 51.17 & 51.11 & 49.74 & 45.17\\
+	6 & 50.16 & 50.11 & 51.12 & 46.28\\
+	7 & 50.28 & 50.37 & 50.71 & 45.82\\
+	8 & 50.19 & 50.25 & 50.23 & 47.14 \\
+	9 & 50.24 & 50.34 & 49.17 & 47.22\\
+	10 & 50.14 & 50.94 & 49.82 & 46.32\\
+	30 & 49.56 & 50.56 & 47.71 & 45.64\\
+	40 & 50.27 & 50.49 & 46.14 & 45.18\\
+	50 & 48.17 & 50.29 & 45.61 & 45.12\\
+	80 & 48.22 & 50.54 & 45.22 & 45.14 \\
+	\hline
+\end{tabular}
+
+\caption{The comparison between our work and the original work under receptive field = 243 frames and training epochs = 1200 unit epochs.}
+\label{tab:time_related}
+\end{table*}
+
+
+\subsection{Temporal-related Training Results}
+
+The time for training data is a crucial standard for deep learning, like the success of invention of Faster R-CNN
+\cite{Ren2015}. In this part we take a deep insight of the time consumption and precision-time rate between the 
+original model and our Eating-based model (left), and the relationship between our work 
+and the original work using protocol MPJPE with the lapse of epochs (right) in Table \ref{tab:time_related}. The 
+corresponding visualization is shown in figure \ref{fig:temporal_figure}.
+
+In the second subtable the precision-time rate $\theta$ is calculated by the formula below, where $\epsilon_0$ stands
+for the regulated error when training to the half of the process, $\epsilon_t$ represents the error 
+after a long time of training (in our case 80 epochs), $i\in\{0,1\}$, $k=1.2$ and $t$ stands for the real time consumed for each training.
+
+\begin{gather}
+	\epsilon_0^{(1,2)}=\frac{\epsilon_{\left\lfloor\frac{t}{2}\right\rfloor}^{(1)}+\epsilon_{\left\lfloor\frac{t}{2}\right\rfloor}^{(2)}}{2}\cdot k \\
+	\theta^{(i)} = \frac{\epsilon_0^{(1,2)} - \epsilon_t^{(i)}}{t}		
+\end{gather}
+
+\section{Conclusion}
+
+Concluding all results from the Experiment part we make conclusions that our model can be used to solve action-oriented problems, pick any kind of actions you want to
+train and estimate, accelerate the learning process, and save your data.
+
+\subsection{A Lightweight Solution For Action-oriented Pose-estimation Problems.}
+Our model can serve as a viable solution for action-oriented problems. If there is a request that only a certain action (e.g. Eating) is needed to be trained
+and estimated, we can use our method to act as an alternative other than \textit{VideoPose3D}. Evidence has proved that our model has a similar pose estimation ability
+with \textit{VideoPose3D} using MPJPE Protocol (Table \ref{tab:MPJPE Error}) and a better performance than \textit{VideoPose3D} under a middle-size reception field
+and short training epoch using Velocity Error of MPJPE Protocol (Table \ref{tab:V-MPJPE Error}). Also, our model converges much quicker than the original model
+(Table \ref{tab:time_related}-left and Figure \ref{fig:temporal_figure}) and uses less data (as mentioned in Part 3).
+
+These characteristics imply that our model is a good candidate for tasks where a specific action is needed to be trained and estimated, and the learning cost is limited.
+Our model doesn't require a large amount of computational resources.
+
+\subsection{A Fast Solution For Common Pose-estimation Problems.}
+
+Our model can also be used for a common pose-estimation problem. Although its best-performance is not as good as \textit{VideoPose3D} (Table \ref{tab:MPJPE Error} 
+and \ref{tab:V-MPJPE Error}), it requires a much shorter time for training and gives a higher precision-time rate (Table \ref{tab:time_related}-left). The flexibility
+that it can be trained using different actions can also serve as a way to improve the performance of a certain kind of action when the result is not yet satisfactory.
+
+
+\subsection{Appendix}
+\clearpage
 \begin{figure*}
      \centering
      \begin{subfigure}[b]{0.49\textwidth}
@@ -387,114 +481,17 @@ Arguments & Model & Dir. & Disc. & Eat & Greet & Phone & Photo & Pose & Purch. &
         \label{fig:four_error_graphs}
 \end{figure*}
 
-
-
-%------------------------------------------------------------------------
-
-\begin{table*}
-\begin{minipage}[t]{.49\textwidth}
-	\centering
-	\begin{tabular}{ccc}
-	\hline
-	Object & VP3D-Avg & Ours-Avg \\
-	\hline
-
-	TC (40 E)& 84972 sec. & 28848 sec.\\
-	MPJPE& 50.27 mm & 50.49 mm\\
-	Velocity-M& 2.66 mm & 3.02 mm  \\
-	
-	\hline
-	
-	TC (80 E)& 176976 sec. & 56921 sec.\\
-	MPJPE&  48.22 mm & 50.54 mm\\
-	Velocity-M& 2.49 mm & 3.08 mm  \\
-	
-	\hline
-	
-	MPJPE $\epsilon_0$ & \multicolumn{2}{c}{60.46} \\
-	Velo-M $\epsilon_0$ & \multicolumn{2}{c}{3.408} \\
-	MPJPE TPR & 0.153 & 0.124 \\
-	Velo-M TPR & $11.4\cdot 10^{-3}$ & $4.1\cdot 10^{-3}$ \\
-
-	
-
-	\hline
-	\end{tabular}
-\end{minipage}
-\quad
-\begin{minipage}[t]{.49\textwidth}
-	\centering
-	\begin{tabular}{ccccc}
-	\hline
-	Epochs & VP3D-Avg & Ours-Avg & VP3D-Eat & Ours-Eat\\
-	\hline
-	1 & 59.11 & 57.52 & 54.22 & 51.14 \\
-	2 & 56.26 & 52.06 & 52.21 & 48.72 \\
-	3 & 61.73 & 51.28 & 51.17 & 47.14 \\
-	4 & 54.24 & 51.41 & 49.22 & 45.28 \\
-	5 & 51.17 & 51.11 & 49.74 & 45.17\\
-	6 & 50.16 & 50.11 & 51.12 & 46.28\\
-	7 & 50.28 & 50.37 & 50.71 & 45.82\\
-	8 & 50.19 & 50.25 & 50.23 & 47.14 \\
-	9 & 50.24 & 50.34 & 49.17 & 47.22\\
-	10 & 50.14 & 50.94 & 49.82 & 46.32\\
-	30 & 49.56 & 50.56 & 47.71 & 45.64\\
-	40 & 50.27 & 50.49 & 46.14 & 45.18\\
-	50 & 48.17 & 50.29 & 45.61 & 45.12\\
-	80 & 48.22 & 50.54 & 45.22 & 45.14 \\
-	\hline
-	\end{tabular}
-\end{minipage}
-
-\caption{The property cluster with receptive field = 243 frames and training epochs = 1200 unit epochs (left) and the 
-comparison between our work and the original work under receptive field = 243 frames and training epochs = 1200 unit epochs
-(right). Note that each epoch worths $15$ unit epochs.}
-\label{tab:time_related}
-\end{table*}
-
-\clearpage
-\newpage
-\subsection{Temporal-related Training Results}
-
-The time for training data is a crucial standard for deep learning, like the success of invention of Faster R-CNN
-\cite{Ren2015}. In this part we take a deep insight of the time consumption and time-precision rate between the 
-original model and our Eating-based model (left), and the relationship between our work 
-and the original work using protocol MPJPE with the lapse of epochs (right) in Table \ref{tab:time_related}. The 
-corresponding visualization is shown in figure \ref{fig:temporal_figure}.
-
-In the second subtable the time-precision rate $\theta$ is calculated by the formula below, where $\epsilon_0$ stands
-for the regulated error when training to the half of the process, $\epsilon_t$ represents the error 
-after a long time of training (in our case 80 epochs), $i\in\{0,1\}$, $k=1.2$ and $t$ stands for the real time consumed for each training.
-\begin{equation}
-		\epsilon_0^{(1,2)}=\frac{\epsilon_{\left\lfloor\frac{t}{2}\right\rfloor}^{(1)}+\epsilon_{\left\lfloor\frac{t}{2}\right\rfloor}^{(2)}}{2}\cdot k
-\end{equation}
-\begin{equation}
-	\theta^{(i)} = \frac{\epsilon_0^{(1,2)} - \epsilon_t^{(i)}}{t}
-\end{equation}
-
-
-\begin{figure}[H]
+\begin{figure*}
     \centering
     \includegraphics[width=0.49\textwidth]{MPJPE_epoch.png}
 	\caption{The temporal results for the two models (\textit{VideoPose3D} and our model) and two standards (average and only eating).}
 	\label{fig:temporal_figure}
-\end{figure}
+\end{figure*}
 
 
 
-\section{Conclusion}
 
-Concluding all results from the Experiment part we make conclusions that our model can be used to 
-
-\textbf{A Solution For Action-oriented Problems.}
-Our model can serve as a viable solution for action-oriented problems. For example, if there is a request that only a certain action is needed to be trained
-and estimated, we can use our method to act as an alternative other than \textit{VideoPose3D}. Our model 
-
-\subsection{Pick What You Want}
-
-\subsection{Accelerate Training Process}
-
-\newpage
+\clearpage
 
 {\small
 \bibliographystyle{ieee_fullname}
