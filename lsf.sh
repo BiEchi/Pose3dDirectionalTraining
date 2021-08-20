@@ -20,10 +20,10 @@ python run.py -e 80 -k cpn_ft_h36m_dbb -arc 3,3,3,3,3 -cho all
 # python ./prepare_data_h36m.py --from-source-cdf ../../dataset
 
 # if you want to estimate our model using the raw data:
-# for i in Directions Discussion Eating Greeting Phoning Photo Posing Purchases Sitting SittingDown Smoking Waiting WalkDog Walking WalkTogether ;
-# do
-#     python run.py -e 15 -k cpn_ft_h36m_dbb -arc 3,3,3 -cho $i ;
-# done
+for i in Directions Discussion Eating Greeting Phoning Photo Posing Purchases Sitting SittingDown Smoking Waiting WalkDog Walking WalkTogether ;
+do
+    python run.py -e 100 -k cpn_ft_h36m_dbb -arc 3,3,3,3,3 -cho $i ;
+done
 
 
 # if you want to estimate the original model using the best-performance parameter:
